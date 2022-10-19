@@ -1,1 +1,1 @@
-Gerber file
+Gerber file and parts list
