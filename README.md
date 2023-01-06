@@ -4,6 +4,8 @@ Attiny 402.
 It should work on any Attiny compatible series that meet minimun requirements.
 Intended to be used with a 4.2v 100mha(max size that I can fit in the case) litio batt.
 
+RECOMMENDED CPU SPEED 8MHZ.
+
 Game&Light hardware:
 https://hackaday.io/project/184703-gamelight-a-keychain-size-game-console-with-a-led
 
