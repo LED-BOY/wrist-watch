@@ -1,0 +1,2970 @@
+
+C:\Users\gross\AppData\Local\Temp\arduino_build_505236/Game_Light_watch_2_2.2.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+../../../../../crt1/gcrt1.S:63
+   0:	19 c0       	rjmp	.+50     	; 0x34 <__ctors_end>
+../../../../../crt1/gcrt1.S:67
+   2:	3f c0       	rjmp	.+126    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:68
+   4:	3e c0       	rjmp	.+124    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:69
+   6:	8b c2       	rjmp	.+1302   	; 0x51e <__vector_3>
+../../../../../crt1/gcrt1.S:70
+   8:	3c c0       	rjmp	.+120    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:71
+   a:	3b c0       	rjmp	.+118    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:72
+   c:	3a c0       	rjmp	.+116    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:73
+   e:	21 c2       	rjmp	.+1090   	; 0x452 <__vector_7>
+../../../../../crt1/gcrt1.S:74
+  10:	38 c0       	rjmp	.+112    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:75
+  12:	37 c0       	rjmp	.+110    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:76
+  14:	36 c0       	rjmp	.+108    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:77
+  16:	35 c0       	rjmp	.+106    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:78
+  18:	34 c0       	rjmp	.+104    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:79
+  1a:	54 c2       	rjmp	.+1192   	; 0x4c4 <__vector_13>
+../../../../../crt1/gcrt1.S:80
+  1c:	32 c0       	rjmp	.+100    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:81
+  1e:	31 c0       	rjmp	.+98     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:82
+  20:	30 c0       	rjmp	.+96     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:83
+  22:	2f c0       	rjmp	.+94     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:84
+  24:	2e c0       	rjmp	.+92     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:85
+  26:	2d c0       	rjmp	.+90     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:86
+  28:	2c c0       	rjmp	.+88     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:87
+  2a:	2b c0       	rjmp	.+86     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:88
+  2c:	2a c0       	rjmp	.+84     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:89
+  2e:	29 c0       	rjmp	.+82     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:90
+  30:	28 c0       	rjmp	.+80     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:91
+  32:	27 c0       	rjmp	.+78     	; 0x82 <__bad_interrupt>
+
+00000034 <__ctors_end>:
+__trampolines_start():
+../../../../../crt1/gcrt1.S:230
+  34:	11 24       	eor	r1, r1
+../../../../../crt1/gcrt1.S:231
+  36:	1f be       	out	0x3f, r1	; 63
+../../../../../crt1/gcrt1.S:232
+  38:	cf ef       	ldi	r28, 0xFF	; 255
+../../../../../crt1/gcrt1.S:234
+  3a:	cd bf       	out	0x3d, r28	; 61
+../../../../../crt1/gcrt1.S:236
+  3c:	df e3       	ldi	r29, 0x3F	; 63
+../../../../../crt1/gcrt1.S:237
+  3e:	de bf       	out	0x3e, r29	; 62
+
+00000040 <_initThreeStuff()>:
+_Z15_initThreeStuffv():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:104
+
+  /* Minimum: Reset if we wound up here through malfunction - this relies on user clearing the  *
+   * register on startup, which is rarely done in Arduino land.                                 */
+  void __attribute__((weak)) init_reset_flags() ;
+  void __attribute__((weak)) init_reset_flags() {
+    uint8_t flags = RSTCTRL.RSTFR;
+  40:	80 91 40 00 	lds	r24, 0x0040	; 0x800040 <numbers+0x7f705b>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:105
+    RSTCTRL.RSTFR = flags;
+  44:	80 93 40 00 	sts	0x0040, r24	; 0x800040 <numbers+0x7f705b>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:106
+    if (flags == 0) {
+  48:	81 11       	cpse	r24, r1
+  4a:	05 c0       	rjmp	.+10     	; 0x56 <_initThreeStuff()+0x16>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:107
+      _PROTECTED_WRITE(RSTCTRL.SWRR, 1);
+  4c:	98 ed       	ldi	r25, 0xD8	; 216
+  4e:	21 e0       	ldi	r18, 0x01	; 1
+  50:	94 bf       	out	0x34, r25	; 52
+  52:	20 93 41 00 	sts	0x0041, r18	; 0x800041 <numbers+0x7f705c>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:109
+    }
+    GPIOR0 = flags;
+  56:	8c bb       	out	0x1c, r24	; 28
+
+00000058 <__do_copy_data>:
+__do_copy_data():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
+  58:	1f e3       	ldi	r17, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2410
+  5a:	a0 e0       	ldi	r26, 0x00	; 0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
+  5c:	bf e3       	ldi	r27, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
+  5e:	e9 ef       	ldi	r30, 0xF9	; 249
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
+  60:	ff e0       	ldi	r31, 0x0F	; 15
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
+  62:	02 c0       	rjmp	.+4      	; 0x68 <__do_copy_data+0x10>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2417
+  64:	05 90       	lpm	r0, Z+
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2422
+  66:	0d 92       	st	X+, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2424
+  68:	a4 30       	cpi	r26, 0x04	; 4
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2425
+  6a:	b1 07       	cpc	r27, r17
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2426
+  6c:	d9 f7       	brne	.-10     	; 0x64 <__do_copy_data+0xc>
+
+0000006e <__do_clear_bss>:
+__do_clear_bss():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  6e:	2f e3       	ldi	r18, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  70:	a4 e0       	ldi	r26, 0x04	; 4
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  72:	bf e3       	ldi	r27, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  74:	01 c0       	rjmp	.+2      	; 0x78 <.do_clear_bss_start>
+
+00000076 <.do_clear_bss_loop>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  76:	1d 92       	st	X+, r1
+
+00000078 <.do_clear_bss_start>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  78:	a5 31       	cpi	r26, 0x15	; 21
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  7a:	b2 07       	cpc	r27, r18
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  7c:	e1 f7       	brne	.-8      	; 0x76 <.do_clear_bss_loop>
+.do_clear_bss_start():
+../../../../../crt1/gcrt1.S:314
+  7e:	84 d2       	rcall	.+1288   	; 0x588 <main>
+../../../../../crt1/gcrt1.S:315
+  80:	10 c6       	rjmp	.+3104   	; 0xca2 <_exit>
+
+00000082 <__bad_interrupt>:
+__vector_22():
+../../../../../crt1/gcrt1.S:209
+  82:	be cf       	rjmp	.-132    	; 0x0 <__vectors>
+
+00000084 <TinyI2CMaster::stop() [clone .constprop.20]>:
+_ZN13TinyI2CMaster4stopEv.constprop.20():
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:310
+bool TinyI2CMaster::restart(uint8_t address, int32_t readcount) {
+  return TinyI2CMaster::start(address, readcount);
+}
+
+void TinyI2CMaster::stop (void) {
+  TWI0.MCTRLB |= TWI_MCMD_STOP_gc;                                // Send STOP
+  84:	80 91 14 08 	lds	r24, 0x0814	; 0x800814 <numbers+0x7f782f>
+  88:	83 60       	ori	r24, 0x03	; 3
+  8a:	80 93 14 08 	sts	0x0814, r24	; 0x800814 <numbers+0x7f782f>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:311
+  while (!(TWI0.MSTATUS & TWI_BUSSTATE_IDLE_gc));                 // Wait for bus to return to idle state
+  8e:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  92:	80 ff       	sbrs	r24, 0
+  94:	fc cf       	rjmp	.-8      	; 0x8e <TinyI2CMaster::stop() [clone .constprop.20]+0xa>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:312
+}
+  96:	08 95       	ret
+
+00000098 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>:
+_ZN13TinyI2CMaster5writeEh.constprop.18():
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:280
+  I2Ccount = 0;
+  return TinyI2CMaster::read();
+}
+
+bool TinyI2CMaster::write (uint8_t data) {
+  TWI0.MCTRLB = TWI_MCMD_RECVTRANS_gc;                            // Prime transaction
+  98:	92 e0       	ldi	r25, 0x02	; 2
+  9a:	90 93 14 08 	sts	0x0814, r25	; 0x800814 <numbers+0x7f782f>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:281
+  TWI0.MDATA = data;                                              // Send data
+  9e:	80 93 18 08 	sts	0x0818, r24	; 0x800818 <numbers+0x7f7833>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:282
+  while (!(TWI0.MSTATUS & TWI_WIF_bm));                           // Wait for write to complete
+  a2:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  a6:	86 ff       	sbrs	r24, 6
+  a8:	fc cf       	rjmp	.-8      	; 0xa2 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]+0xa>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:283
+  if (TWI0.MSTATUS & (TWI_ARBLOST_bm|TWI_BUSERR_bm))return false; // Fails if bus error or arblost
+  aa:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  ae:	8c 70       	andi	r24, 0x0C	; 12
+  b0:	39 f4       	brne	.+14     	; 0xc0 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]+0x28>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:284
+  return !(TWI0.MSTATUS & TWI_RXACK_bm);                          // Returns true if slave gave an ACK
+  b2:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  b6:	82 95       	swap	r24
+  b8:	81 70       	andi	r24, 0x01	; 1
+  ba:	91 e0       	ldi	r25, 0x01	; 1
+  bc:	89 27       	eor	r24, r25
+  be:	08 95       	ret
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:283
+
+bool TinyI2CMaster::write (uint8_t data) {
+  TWI0.MCTRLB = TWI_MCMD_RECVTRANS_gc;                            // Prime transaction
+  TWI0.MDATA = data;                                              // Send data
+  while (!(TWI0.MSTATUS & TWI_WIF_bm));                           // Wait for write to complete
+  if (TWI0.MSTATUS & (TWI_ARBLOST_bm|TWI_BUSERR_bm))return false; // Fails if bus error or arblost
+  c0:	80 e0       	ldi	r24, 0x00	; 0
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:285
+  return !(TWI0.MSTATUS & TWI_RXACK_bm);                          // Returns true if slave gave an ACK
+}
+  c2:	08 95       	ret
+
+000000c4 <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]>:
+_ZN13TinyI2CMaster5startEhl.constprop.16():
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:292
+// Start transmission by sending address
+bool TinyI2CMaster::start (uint8_t address, int32_t readcount) {
+  bool read;
+  if (readcount == 0) read = 0;                                   // Write
+  else { I2Ccount = readcount; read = 1; }                        // Read
+  TWI0.MADDR = address<<1 | read;                                 // Send START condition
+  c4:	88 e7       	ldi	r24, 0x78	; 120
+  c6:	80 93 17 08 	sts	0x0817, r24	; 0x800817 <numbers+0x7f7832>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:293
+  while (!(TWI0.MSTATUS & (TWI_WIF_bm | TWI_RIF_bm)));            // Wait for write or read interrupt flag
+  ca:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  ce:	80 7c       	andi	r24, 0xC0	; 192
+  d0:	e1 f3       	breq	.-8      	; 0xca <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]+0x6>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:294
+  if (TWI0.MSTATUS & TWI_ARBLOST_bm) {                            // Arbitration lost or bus error
+  d2:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  d6:	83 ff       	sbrs	r24, 3
+  d8:	06 c0       	rjmp	.+12     	; 0xe6 <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]+0x22>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:295
+    while (!(TWI0.MSTATUS & TWI_BUSSTATE_IDLE_gc));               // Wait for bus to return to idle state
+  da:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  de:	80 ff       	sbrs	r24, 0
+  e0:	fc cf       	rjmp	.-8      	; 0xda <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]+0x16>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:296
+    return false;
+  e2:	80 e0       	ldi	r24, 0x00	; 0
+  e4:	08 95       	ret
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:297
+  } else if (TWI0.MSTATUS & TWI_RXACK_bm) {                       // Address not acknowledged by client
+  e6:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  ea:	84 ff       	sbrs	r24, 4
+  ec:	0a c0       	rjmp	.+20     	; 0x102 <__DATA_REGION_LENGTH__+0x2>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:298
+    TWI0.MCTRLB |= TWI_MCMD_STOP_gc;                              // Send stop condition
+  ee:	80 91 14 08 	lds	r24, 0x0814	; 0x800814 <numbers+0x7f782f>
+  f2:	83 60       	ori	r24, 0x03	; 3
+  f4:	80 93 14 08 	sts	0x0814, r24	; 0x800814 <numbers+0x7f782f>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:299
+    while (!(TWI0.MSTATUS & TWI_BUSSTATE_IDLE_gc));               // Wait for bus to return to idle state
+  f8:	80 91 15 08 	lds	r24, 0x0815	; 0x800815 <numbers+0x7f7830>
+  fc:	80 ff       	sbrs	r24, 0
+  fe:	fc cf       	rjmp	.-8      	; 0xf8 <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]+0x34>
+ 100:	f0 cf       	rjmp	.-32     	; 0xe2 <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]+0x1e>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:302
+    return false;
+  }
+  return true;                                                    // Return true if slave gave an ACK
+ 102:	81 e0       	ldi	r24, 0x01	; 1
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:303
+}
+ 104:	08 95       	ret
+
+00000106 <SSD1306Device::ssd1306_send_data_start() [clone .constprop.15]>:
+_ZN13SSD1306Device23ssd1306_send_data_startEv.constprop.15():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:100
+  TinyI2C.write(command);
+  ssd1306_send_command_stop();
+}
+
+void SSD1306Device::ssd1306_send_data_start(void) {
+  TinyI2C.start(SSD1306, 0);
+ 106:	de df       	rcall	.-68     	; 0xc4 <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:101
+  TinyI2C.write(0x40); // write data
+ 108:	80 e4       	ldi	r24, 0x40	; 64
+ 10a:	c6 cf       	rjmp	.-116    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+
+0000010c <SSD1306Device::ssd1306_send_command_start() [clone .constprop.14]>:
+_ZN13SSD1306Device26ssd1306_send_command_startEv.constprop.14():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:81
+    ssd1306_send_command(ssd1306_init_sequence[i]);
+  }
+}
+
+void SSD1306Device::ssd1306_send_command_start(void) {
+  TinyI2C.start(SSD1306, 0);
+ 10c:	db df       	rcall	.-74     	; 0xc4 <TinyI2CMaster::start(unsigned char, long) [clone .constprop.16]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:82
+  TinyI2C.write(0x00); // write command
+ 10e:	80 e0       	ldi	r24, 0x00	; 0
+ 110:	c3 cf       	rjmp	.-122    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+
+00000112 <SSD1306Device::setCursor(unsigned char, unsigned char) [clone .constprop.13]>:
+_ZN13SSD1306Device9setCursorEhh.constprop.13():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:108
+
+void SSD1306Device::ssd1306_send_data_stop(void) {
+  TinyI2C.stop();
+}
+
+void SSD1306Device::setCursor(uint8_t x, uint8_t y) {
+ 112:	cf 93       	push	r28
+ 114:	df 93       	push	r29
+ 116:	c8 2f       	mov	r28, r24
+ 118:	d6 2f       	mov	r29, r22
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:109
+  ssd1306_send_command_start();
+ 11a:	f8 df       	rcall	.-16     	; 0x10c <SSD1306Device::ssd1306_send_command_start() [clone .constprop.14]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:110
+  TinyI2C.write(0xb0 + y);
+ 11c:	80 eb       	ldi	r24, 0xB0	; 176
+ 11e:	8d 0f       	add	r24, r29
+ 120:	bb df       	rcall	.-138    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:111
+  TinyI2C.write(((x & 0xf0) >> 4) | 0x10); // | 0x10
+ 122:	8c 2f       	mov	r24, r28
+ 124:	82 95       	swap	r24
+ 126:	8f 70       	andi	r24, 0x0F	; 15
+ 128:	80 61       	ori	r24, 0x10	; 16
+ 12a:	b6 df       	rcall	.-148    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:112
+  TinyI2C.write((x & 0x0f) | 0x01); // | 0x01
+ 12c:	8c 2f       	mov	r24, r28
+ 12e:	8e 70       	andi	r24, 0x0E	; 14
+ 130:	81 60       	ori	r24, 0x01	; 1
+ 132:	b2 df       	rcall	.-156    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:114
+  ssd1306_send_command_stop();
+}
+ 134:	df 91       	pop	r29
+ 136:	cf 91       	pop	r28
+ssd1306_send_command_stop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:86
+  TinyI2C.start(SSD1306, 0);
+  TinyI2C.write(0x00); // write command
+}
+
+void SSD1306Device::ssd1306_send_command_stop(void) {
+  TinyI2C.stop();
+ 138:	a5 cf       	rjmp	.-182    	; 0x84 <TinyI2CMaster::stop() [clone .constprop.20]>
+
+0000013a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>:
+_ZN13SSD1306Device8drawLineEhhhh.constprop.12():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:116
+  TinyI2C.write(((x & 0xf0) >> 4) | 0x10); // | 0x10
+  TinyI2C.write((x & 0x0f) | 0x01); // | 0x01
+  ssd1306_send_command_stop();
+}
+
+void SSD1306Device::drawLine(uint8_t x0, uint8_t y0, uint8_t lineLenght, uint8_t dataValue) {
+ 13a:	1f 93       	push	r17
+ 13c:	cf 93       	push	r28
+ 13e:	df 93       	push	r29
+ 140:	14 2f       	mov	r17, r20
+ 142:	d2 2f       	mov	r29, r18
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:117
+  setCursor(x0, y0);
+ 144:	e6 df       	rcall	.-52     	; 0x112 <SSD1306Device::setCursor(unsigned char, unsigned char) [clone .constprop.13]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:118
+  ssd1306_send_data_start();
+ 146:	df df       	rcall	.-66     	; 0x106 <SSD1306Device::ssd1306_send_data_start() [clone .constprop.15]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:119
+  for (uint8_t x = 0; x < lineLenght; x++) {
+ 148:	c0 e0       	ldi	r28, 0x00	; 0
+ 14a:	c1 17       	cp	r28, r17
+ 14c:	21 f0       	breq	.+8      	; 0x156 <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]+0x1c>
+ssd1306_send_data_byte():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:90
+void SSD1306Device::ssd1306_send_command_stop(void) {
+  TinyI2C.stop();
+}
+
+void SSD1306Device::ssd1306_send_data_byte(uint8_t byte) {
+  TinyI2C.write(byte);
+ 14e:	8d 2f       	mov	r24, r29
+ 150:	a3 df       	rcall	.-186    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+_ZN13SSD1306Device8drawLineEhhhh.constprop.12():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:119
+}
+
+void SSD1306Device::drawLine(uint8_t x0, uint8_t y0, uint8_t lineLenght, uint8_t dataValue) {
+  setCursor(x0, y0);
+  ssd1306_send_data_start();
+  for (uint8_t x = 0; x < lineLenght; x++) {
+ 152:	cf 5f       	subi	r28, 0xFF	; 255
+ 154:	fa cf       	rjmp	.-12     	; 0x14a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]+0x10>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:123
+    ssd1306_send_data_byte(dataValue);
+  }
+  ssd1306_send_data_stop();
+}
+ 156:	df 91       	pop	r29
+ 158:	cf 91       	pop	r28
+ 15a:	1f 91       	pop	r17
+ssd1306_send_data_stop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:105
+  TinyI2C.start(SSD1306, 0);
+  TinyI2C.write(0x40); // write data
+}
+
+void SSD1306Device::ssd1306_send_data_stop(void) {
+  TinyI2C.stop();
+ 15c:	93 cf       	rjmp	.-218    	; 0x84 <TinyI2CMaster::stop() [clone .constprop.20]>
+
+0000015e <SSD1306Device::clearScreen() [clone .constprop.10]>:
+_ZN13SSD1306Device11clearScreenEv.constprop.10():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:135
+void SSD1306Device::brightScreen(void) {
+  oled.ssd1306_send_command(0x81);// brightness controll
+  oled.ssd1306_send_command(0x3F);// dim screen
+}
+
+void SSD1306Device::clearScreen (void) {
+ 15e:	cf 93       	push	r28
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:136
+  for ( uint8_t x = 0; x < 4; x++) {
+ 160:	c0 e0       	ldi	r28, 0x00	; 0
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:137
+    oled.drawLine(0, x, 128, 0x00);
+ 162:	20 e0       	ldi	r18, 0x00	; 0
+ 164:	40 e8       	ldi	r20, 0x80	; 128
+ 166:	6c 2f       	mov	r22, r28
+ 168:	80 e0       	ldi	r24, 0x00	; 0
+ 16a:	e7 df       	rcall	.-50     	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:136
+  oled.ssd1306_send_command(0x81);// brightness controll
+  oled.ssd1306_send_command(0x3F);// dim screen
+}
+
+void SSD1306Device::clearScreen (void) {
+  for ( uint8_t x = 0; x < 4; x++) {
+ 16c:	cf 5f       	subi	r28, 0xFF	; 255
+ 16e:	c4 30       	cpi	r28, 0x04	; 4
+ 170:	c1 f7       	brne	.-16     	; 0x162 <SSD1306Device::clearScreen() [clone .constprop.10]+0x4>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:139
+    oled.drawLine(0, x, 128, 0x00);
+  }
+}
+ 172:	cf 91       	pop	r28
+ 174:	08 95       	ret
+
+00000176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>:
+_ZN13SSD1306Device20ssd1306_send_commandEh.constprop.8():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:93
+
+void SSD1306Device::ssd1306_send_data_byte(uint8_t byte) {
+  TinyI2C.write(byte);
+}
+
+void SSD1306Device::ssd1306_send_command(uint8_t command) {
+ 176:	cf 93       	push	r28
+ 178:	c8 2f       	mov	r28, r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:94
+  ssd1306_send_command_start();
+ 17a:	c8 df       	rcall	.-112    	; 0x10c <SSD1306Device::ssd1306_send_command_start() [clone .constprop.14]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:95
+  TinyI2C.write(command);
+ 17c:	8c 2f       	mov	r24, r28
+ 17e:	8c df       	rcall	.-232    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:97
+  ssd1306_send_command_stop();
+}
+ 180:	cf 91       	pop	r28
+ssd1306_send_command_stop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:86
+  TinyI2C.start(SSD1306, 0);
+  TinyI2C.write(0x00); // write command
+}
+
+void SSD1306Device::ssd1306_send_command_stop(void) {
+  TinyI2C.stop();
+ 182:	80 cf       	rjmp	.-256    	; 0x84 <TinyI2CMaster::stop() [clone .constprop.20]>
+
+00000184 <buttonDebounce(unsigned int)>:
+_Z14buttonDebouncej():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:372
+    oled.ssd1306_send_data_stop();
+    i += SpritePixelsHeight;
+  }
+}
+
+bool buttonDebounce(uint16_t debounceDelay) {
+ 184:	bc 01       	movw	r22, r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:374
+
+  if (BUTTONHIGH) return false;
+ 186:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 18a:	85 fd       	sbrc	r24, 5
+ 18c:	41 c0       	rjmp	.+130    	; 0x210 <buttonDebounce(unsigned int)+0x8c>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:375
+  timer = interruptTimer;
+ 18e:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 192:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 196:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ 19a:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:384
+    if ((interruptTimer - timer) > 3000 && ledColor != 0) {
+      PORTA.DIR = 0b00000000;// led off
+      ledColor = 0;
+    }
+
+    if ((interruptTimer - timer) > 6000)  _PROTECTED_WRITE(RSTCTRL.SWRR, 1); //reset device
+ 19e:	98 ed       	ldi	r25, 0xD8	; 216
+ 1a0:	41 e0       	ldi	r20, 0x01	; 1
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:377
+bool buttonDebounce(uint16_t debounceDelay) {
+
+  if (BUTTONHIGH) return false;
+  timer = interruptTimer;
+
+  while ((interruptTimer - timer) < debounceDelay || BUTTONLOW) { // super simple button debounce
+ 1a2:	20 91 12 3f 	lds	r18, 0x3F12	; 0x803f12 <interruptTimer>
+ 1a6:	30 91 13 3f 	lds	r19, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 1aa:	e0 91 10 3f 	lds	r30, 0x3F10	; 0x803f10 <timer>
+ 1ae:	f0 91 11 3f 	lds	r31, 0x3F11	; 0x803f11 <timer+0x1>
+ 1b2:	2e 1b       	sub	r18, r30
+ 1b4:	3f 0b       	sbc	r19, r31
+ 1b6:	26 17       	cp	r18, r22
+ 1b8:	37 07       	cpc	r19, r23
+ 1ba:	20 f0       	brcs	.+8      	; 0x1c4 <buttonDebounce(unsigned int)+0x40>
+ 1bc:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 1c0:	85 fd       	sbrc	r24, 5
+ 1c2:	28 c0       	rjmp	.+80     	; 0x214 <buttonDebounce(unsigned int)+0x90>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:379
+
+    if ((interruptTimer - timer) > 3000 && ledColor != 0) {
+ 1c4:	20 91 12 3f 	lds	r18, 0x3F12	; 0x803f12 <interruptTimer>
+ 1c8:	30 91 13 3f 	lds	r19, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 1cc:	e0 91 10 3f 	lds	r30, 0x3F10	; 0x803f10 <timer>
+ 1d0:	f0 91 11 3f 	lds	r31, 0x3F11	; 0x803f11 <timer+0x1>
+ 1d4:	2e 1b       	sub	r18, r30
+ 1d6:	3f 0b       	sbc	r19, r31
+ 1d8:	29 3b       	cpi	r18, 0xB9	; 185
+ 1da:	3b 40       	sbci	r19, 0x0B	; 11
+ 1dc:	40 f0       	brcs	.+16     	; 0x1ee <buttonDebounce(unsigned int)+0x6a>
+ 1de:	80 91 05 3f 	lds	r24, 0x3F05	; 0x803f05 <ledColor>
+ 1e2:	88 23       	and	r24, r24
+ 1e4:	21 f0       	breq	.+8      	; 0x1ee <buttonDebounce(unsigned int)+0x6a>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:380
+      PORTA.DIR = 0b00000000;// led off
+ 1e6:	10 92 00 04 	sts	0x0400, r1	; 0x800400 <numbers+0x7f741b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:381
+      ledColor = 0;
+ 1ea:	10 92 05 3f 	sts	0x3F05, r1	; 0x803f05 <ledColor>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:384
+    }
+
+    if ((interruptTimer - timer) > 6000)  _PROTECTED_WRITE(RSTCTRL.SWRR, 1); //reset device
+ 1ee:	20 91 12 3f 	lds	r18, 0x3F12	; 0x803f12 <interruptTimer>
+ 1f2:	30 91 13 3f 	lds	r19, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 1f6:	e0 91 10 3f 	lds	r30, 0x3F10	; 0x803f10 <timer>
+ 1fa:	f0 91 11 3f 	lds	r31, 0x3F11	; 0x803f11 <timer+0x1>
+ 1fe:	2e 1b       	sub	r18, r30
+ 200:	3f 0b       	sbc	r19, r31
+ 202:	21 37       	cpi	r18, 0x71	; 113
+ 204:	37 41       	sbci	r19, 0x17	; 23
+ 206:	68 f2       	brcs	.-102    	; 0x1a2 <buttonDebounce(unsigned int)+0x1e>
+ 208:	94 bf       	out	0x34, r25	; 52
+ 20a:	40 93 41 00 	sts	0x0041, r20	; 0x800041 <numbers+0x7f705c>
+ 20e:	c9 cf       	rjmp	.-110    	; 0x1a2 <buttonDebounce(unsigned int)+0x1e>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:374
+  }
+}
+
+bool buttonDebounce(uint16_t debounceDelay) {
+
+  if (BUTTONHIGH) return false;
+ 210:	80 e0       	ldi	r24, 0x00	; 0
+ 212:	08 95       	ret
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:377
+  timer = interruptTimer;
+
+  while ((interruptTimer - timer) < debounceDelay || BUTTONLOW) { // super simple button debounce
+ 214:	81 e0       	ldi	r24, 0x01	; 1
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:387
+    }
+
+    if ((interruptTimer - timer) > 6000)  _PROTECTED_WRITE(RSTCTRL.SWRR, 1); //reset device
+  }
+  return true;
+}
+ 216:	08 95       	ret
+
+00000218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>:
+_Z10drawSpritehhPhhh():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:357
+    valueUnits -= value;
+    drawSprite(firstPixel, page, numbers[valueUnits], 32, 2);
+  }
+}
+
+void drawSprite(uint8_t column, uint8_t page, uint8_t *sprite, uint8_t SpritePixelsHeight, uint8_t SpritePagesWidth) {
+ 218:	8f 92       	push	r8
+ 21a:	9f 92       	push	r9
+ 21c:	af 92       	push	r10
+ 21e:	bf 92       	push	r11
+ 220:	cf 92       	push	r12
+ 222:	df 92       	push	r13
+ 224:	ef 92       	push	r14
+ 226:	ff 92       	push	r15
+ 228:	0f 93       	push	r16
+ 22a:	1f 93       	push	r17
+ 22c:	cf 93       	push	r28
+ 22e:	df 93       	push	r29
+ 230:	88 2e       	mov	r8, r24
+ 232:	c6 2f       	mov	r28, r22
+ 234:	7a 01       	movw	r14, r20
+ 236:	92 2e       	mov	r9, r18
+ 238:	06 0f       	add	r16, r22
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:358
+  uint8_t i = 0;
+ 23a:	d0 e0       	ldi	r29, 0x00	; 0
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:363
+
+  for (uint8_t y = 0; y < SpritePagesWidth; y++) {
+    oled.setCursor(column, (page + y));
+    oled.ssd1306_send_data_start();
+    for (uint8_t x = (0 + i); x < (SpritePixelsHeight + i); x++) {
+ 23c:	c2 2e       	mov	r12, r18
+ 23e:	d1 2c       	mov	r13, r1
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:361
+
+void drawSprite(uint8_t column, uint8_t page, uint8_t *sprite, uint8_t SpritePixelsHeight, uint8_t SpritePagesWidth) {
+  uint8_t i = 0;
+
+  for (uint8_t y = 0; y < SpritePagesWidth; y++) {
+    oled.setCursor(column, (page + y));
+ 240:	6c 2f       	mov	r22, r28
+ 242:	88 2d       	mov	r24, r8
+ 244:	66 df       	rcall	.-308    	; 0x112 <SSD1306Device::setCursor(unsigned char, unsigned char) [clone .constprop.13]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:362
+    oled.ssd1306_send_data_start();
+ 246:	5f df       	rcall	.-322    	; 0x106 <SSD1306Device::ssd1306_send_data_start() [clone .constprop.15]>
+ 248:	1d 2f       	mov	r17, r29
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:363
+    for (uint8_t x = (0 + i); x < (SpritePixelsHeight + i); x++) {
+ 24a:	56 01       	movw	r10, r12
+ 24c:	ad 0e       	add	r10, r29
+ 24e:	b1 1c       	adc	r11, r1
+ 250:	81 2f       	mov	r24, r17
+ 252:	90 e0       	ldi	r25, 0x00	; 0
+ 254:	8a 15       	cp	r24, r10
+ 256:	9b 05       	cpc	r25, r11
+ 258:	6c f4       	brge	.+26     	; 0x274 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)+0x5c>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:365
+
+      if (!alwaysOn || x % 2 == 0) oled.ssd1306_send_data_byte(sprite[x]);
+ 25a:	20 91 0b 3f 	lds	r18, 0x3F0B	; 0x803f0b <alwaysOn>
+ 25e:	22 23       	and	r18, r18
+ 260:	11 f0       	breq	.+4      	; 0x266 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)+0x4e>
+ 262:	10 fd       	sbrc	r17, 0
+ 264:	05 c0       	rjmp	.+10     	; 0x270 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)+0x58>
+ 266:	8e 0d       	add	r24, r14
+ 268:	9f 1d       	adc	r25, r15
+ssd1306_send_data_byte():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:90
+}
+
+void SSD1306Device::ssd1306_send_data_byte(uint8_t byte) {
+  TinyI2C.write(byte);
+ 26a:	fc 01       	movw	r30, r24
+ 26c:	80 81       	ld	r24, Z
+ 26e:	14 df       	rcall	.-472    	; 0x98 <TinyI2CMaster::write(unsigned char) [clone .constprop.18]>
+_Z10drawSpritehhPhhh():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:363
+  uint8_t i = 0;
+
+  for (uint8_t y = 0; y < SpritePagesWidth; y++) {
+    oled.setCursor(column, (page + y));
+    oled.ssd1306_send_data_start();
+    for (uint8_t x = (0 + i); x < (SpritePixelsHeight + i); x++) {
+ 270:	1f 5f       	subi	r17, 0xFF	; 255
+ 272:	ee cf       	rjmp	.-36     	; 0x250 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)+0x38>
+ssd1306_send_data_stop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:105
+  TinyI2C.start(SSD1306, 0);
+  TinyI2C.write(0x40); // write data
+}
+
+void SSD1306Device::ssd1306_send_data_stop(void) {
+  TinyI2C.stop();
+ 274:	07 df       	rcall	.-498    	; 0x84 <TinyI2CMaster::stop() [clone .constprop.20]>
+_Z10drawSpritehhPhhh():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:368
+
+      if (!alwaysOn || x % 2 == 0) oled.ssd1306_send_data_byte(sprite[x]);
+    }
+    oled.ssd1306_send_data_stop();
+    i += SpritePixelsHeight;
+ 276:	d9 0d       	add	r29, r9
+ 278:	cf 5f       	subi	r28, 0xFF	; 255
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:360
+}
+
+void drawSprite(uint8_t column, uint8_t page, uint8_t *sprite, uint8_t SpritePixelsHeight, uint8_t SpritePagesWidth) {
+  uint8_t i = 0;
+
+  for (uint8_t y = 0; y < SpritePagesWidth; y++) {
+ 27a:	c0 13       	cpse	r28, r16
+ 27c:	e1 cf       	rjmp	.-62     	; 0x240 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)+0x28>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:370
+      if (!alwaysOn || x % 2 == 0) oled.ssd1306_send_data_byte(sprite[x]);
+    }
+    oled.ssd1306_send_data_stop();
+    i += SpritePixelsHeight;
+  }
+}
+ 27e:	df 91       	pop	r29
+ 280:	cf 91       	pop	r28
+ 282:	1f 91       	pop	r17
+ 284:	0f 91       	pop	r16
+ 286:	ff 90       	pop	r15
+ 288:	ef 90       	pop	r14
+ 28a:	df 90       	pop	r13
+ 28c:	cf 90       	pop	r12
+ 28e:	bf 90       	pop	r11
+ 290:	af 90       	pop	r10
+ 292:	9f 90       	pop	r9
+ 294:	8f 90       	pop	r8
+ 296:	08 95       	ret
+
+00000298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>:
+_Z8drawTimehhha.constprop.11():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:332
+    }
+  }
+  alwaysOn = false;
+}
+
+void drawTime (uint8_t firstPixel, uint8_t page, uint8_t digitHeight, int8_t value) {// this function takes the digit and value from digits.h and draws it without the 0 to the left in hours
+ 298:	ff 92       	push	r15
+ 29a:	0f 93       	push	r16
+ 29c:	1f 93       	push	r17
+ 29e:	cf 93       	push	r28
+ 2a0:	df 93       	push	r29
+ 2a2:	d8 2f       	mov	r29, r24
+ 2a4:	36 2f       	mov	r19, r22
+ 2a6:	c4 2f       	mov	r28, r20
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:333
+  if (value < 0) value = (~value) + 1; // xor value and add one to make it posite
+ 2a8:	c7 fd       	sbrc	r28, 7
+ 2aa:	c1 95       	neg	r28
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:336
+  int8_t valueUnits = value;                      // always draws 2 digits ej: 01.
+
+  if (value < 10) {
+ 2ac:	ca 30       	cpi	r28, 0x0A	; 10
+ 2ae:	44 f5       	brge	.+80     	; 0x300 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]+0x68>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:338
+
+    if (firstPixel == 64 || firstPixel == 76) {
+ 2b0:	80 34       	cpi	r24, 0x40	; 64
+ 2b2:	11 f0       	breq	.+4      	; 0x2b8 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]+0x20>
+ 2b4:	8c 34       	cpi	r24, 0x4C	; 76
+ 2b6:	e1 f4       	brne	.+56     	; 0x2f0 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]+0x58>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:340
+      for (uint8_t x = 1; x < 3; x++) {
+        oled.drawLine (96, x, 32, 0B00000000);
+ 2b8:	20 e0       	ldi	r18, 0x00	; 0
+ 2ba:	40 e2       	ldi	r20, 0x20	; 32
+ 2bc:	61 e0       	ldi	r22, 0x01	; 1
+ 2be:	80 e6       	ldi	r24, 0x60	; 96
+ 2c0:	3c df       	rcall	.-392    	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+ 2c2:	20 e0       	ldi	r18, 0x00	; 0
+ 2c4:	40 e2       	ldi	r20, 0x20	; 32
+ 2c6:	62 e0       	ldi	r22, 0x02	; 2
+ 2c8:	80 e6       	ldi	r24, 0x60	; 96
+ 2ca:	37 df       	rcall	.-402    	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:346
+      }
+    } else {
+      drawSprite((firstPixel + digitHeight), page, numbers[0], 32, 2);
+    }
+
+    drawSprite(firstPixel, page, numbers[value], 32, 2);
+ 2cc:	ec 2f       	mov	r30, r28
+ 2ce:	ee 0f       	add	r30, r30
+ 2d0:	ff 0b       	sbc	r31, r31
+ 2d2:	eb 51       	subi	r30, 0x1B	; 27
+ 2d4:	f0 47       	sbci	r31, 0x70	; 112
+ 2d6:	40 81       	ld	r20, Z
+ 2d8:	51 81       	ldd	r21, Z+1	; 0x01
+ 2da:	02 e0       	ldi	r16, 0x02	; 2
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:353
+  } else {
+    value /= 10; // some math to substract the 0 from the left in hours digits
+    drawSprite((firstPixel + digitHeight), page, numbers[value], 32, 2);
+    value *= 10;
+    valueUnits -= value;
+    drawSprite(firstPixel, page, numbers[valueUnits], 32, 2);
+ 2dc:	20 e2       	ldi	r18, 0x20	; 32
+ 2de:	61 e0       	ldi	r22, 0x01	; 1
+ 2e0:	8d 2f       	mov	r24, r29
+ 2e2:	9a df       	rcall	.-204    	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:355
+  }
+}
+ 2e4:	df 91       	pop	r29
+ 2e6:	cf 91       	pop	r28
+ 2e8:	1f 91       	pop	r17
+ 2ea:	0f 91       	pop	r16
+ 2ec:	ff 90       	pop	r15
+ 2ee:	08 95       	ret
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:343
+    if (firstPixel == 64 || firstPixel == 76) {
+      for (uint8_t x = 1; x < 3; x++) {
+        oled.drawLine (96, x, 32, 0B00000000);
+      }
+    } else {
+      drawSprite((firstPixel + digitHeight), page, numbers[0], 32, 2);
+ 2f0:	02 e0       	ldi	r16, 0x02	; 2
+ 2f2:	20 e2       	ldi	r18, 0x20	; 32
+ 2f4:	4a e6       	ldi	r20, 0x6A	; 106
+ 2f6:	5f e8       	ldi	r21, 0x8F	; 143
+ 2f8:	61 e0       	ldi	r22, 0x01	; 1
+ 2fa:	83 0f       	add	r24, r19
+ 2fc:	8d df       	rcall	.-230    	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+ 2fe:	e6 cf       	rjmp	.-52     	; 0x2cc <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]+0x34>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:349
+    }
+
+    drawSprite(firstPixel, page, numbers[value], 32, 2);
+
+  } else {
+    value /= 10; // some math to substract the 0 from the left in hours digits
+ 300:	1a e0       	ldi	r17, 0x0A	; 10
+ 302:	8c 2f       	mov	r24, r28
+ 304:	61 2f       	mov	r22, r17
+ 306:	4c d4       	rcall	.+2200   	; 0xba0 <__divmodqi4>
+ 308:	f8 2e       	mov	r15, r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:350
+    drawSprite((firstPixel + digitHeight), page, numbers[value], 32, 2);
+ 30a:	e8 2f       	mov	r30, r24
+ 30c:	ee 0f       	add	r30, r30
+ 30e:	ff 0b       	sbc	r31, r31
+ 310:	eb 51       	subi	r30, 0x1B	; 27
+ 312:	f0 47       	sbci	r31, 0x70	; 112
+ 314:	40 81       	ld	r20, Z
+ 316:	51 81       	ldd	r21, Z+1	; 0x01
+ 318:	02 e0       	ldi	r16, 0x02	; 2
+ 31a:	20 e2       	ldi	r18, 0x20	; 32
+ 31c:	61 e0       	ldi	r22, 0x01	; 1
+ 31e:	8d 2f       	mov	r24, r29
+ 320:	83 0f       	add	r24, r19
+ 322:	7a df       	rcall	.-268    	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:352
+    value *= 10;
+    valueUnits -= value;
+ 324:	ec 2f       	mov	r30, r28
+ 326:	f1 9e       	mul	r15, r17
+ 328:	e0 19       	sub	r30, r0
+ 32a:	11 24       	eor	r1, r1
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:353
+    drawSprite(firstPixel, page, numbers[valueUnits], 32, 2);
+ 32c:	ee 0f       	add	r30, r30
+ 32e:	ff 0b       	sbc	r31, r31
+ 330:	eb 51       	subi	r30, 0x1B	; 27
+ 332:	f0 47       	sbci	r31, 0x70	; 112
+ 334:	40 81       	ld	r20, Z
+ 336:	51 81       	ldd	r21, Z+1	; 0x01
+ 338:	d1 cf       	rjmp	.-94     	; 0x2dc <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]+0x44>
+
+0000033a <displayTime(unsigned char, unsigned char)>:
+_Z11displayTimehh():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:114
+      goToSleep();
+    }
+  }
+}
+
+void displayTime(uint8_t hourPos, uint8_t minutesPos) { // draws time in display
+ 33a:	cf 93       	push	r28
+ 33c:	c6 2f       	mov	r28, r22
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:115
+  drawTime(hourPos, 1, 32, hours);
+ 33e:	40 91 0a 3f 	lds	r20, 0x3F0A	; 0x803f0a <hours>
+ 342:	60 e2       	ldi	r22, 0x20	; 32
+ 344:	a9 df       	rcall	.-174    	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:116
+  drawTime(minutesPos, 1, 32, minutes);
+ 346:	40 91 09 3f 	lds	r20, 0x3F09	; 0x803f09 <minutes>
+ 34a:	60 e2       	ldi	r22, 0x20	; 32
+ 34c:	8c 2f       	mov	r24, r28
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:117
+}
+ 34e:	cf 91       	pop	r28
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:116
+  }
+}
+
+void displayTime(uint8_t hourPos, uint8_t minutesPos) { // draws time in display
+  drawTime(hourPos, 1, 32, hours);
+  drawTime(minutesPos, 1, 32, minutes);
+ 350:	a3 cf       	rjmp	.-186    	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+
+00000352 <analogRead.constprop.7>:
+analogRead.constprop.7():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:692
+      // don't waste flash on smallest parts.
+      if ((pin & 0x7F) > 0x1F) { // highest valid mux value for any 0 or 1-series part.
+        return ADC_ERROR_BAD_PIN_OR_CHANNEL;
+      }
+    #endif
+    if (!ADC0.CTRLA & 0x01) return ADC_ERROR_DISABLED;
+ 352:	80 91 00 06 	lds	r24, 0x0600	; 0x800600 <numbers+0x7f761b>
+ 356:	88 23       	and	r24, r24
+ 358:	79 f0       	breq	.+30     	; 0x378 <analogRead.constprop.7+0x26>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:696
+    pin &= 0x1F;
+    /* Reference should be already set up */
+    /* Select channel */
+    ADC0.MUXPOS = (pin << ADC_MUXPOS_gp);
+ 35a:	8d e1       	ldi	r24, 0x1D	; 29
+ 35c:	80 93 06 06 	sts	0x0606, r24	; 0x800606 <numbers+0x7f7621>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:703
+    #if defined(STRICT_ERROR_CHECKING)
+      if (ADC0.COMMAND) return ADC_ERROR_BUSY;
+    #endif
+
+    /* Start conversion */
+    ADC0.COMMAND = ADC_STCONV_bm;
+ 360:	81 e0       	ldi	r24, 0x01	; 1
+ 362:	80 93 08 06 	sts	0x0608, r24	; 0x800608 <numbers+0x7f7623>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:706
+
+    /* Wait for result ready */
+    while (!(ADC0.INTFLAGS & ADC_RESRDY_bm));
+ 366:	80 91 0b 06 	lds	r24, 0x060B	; 0x80060b <numbers+0x7f7626>
+ 36a:	80 ff       	sbrs	r24, 0
+ 36c:	fc cf       	rjmp	.-8      	; 0x366 <analogRead.constprop.7+0x14>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:709
+
+    /* Combine two bytes */
+    return ADC0.RES;
+ 36e:	80 91 10 06 	lds	r24, 0x0610	; 0x800610 <numbers+0x7f762b>
+ 372:	90 91 11 06 	lds	r25, 0x0611	; 0x800611 <numbers+0x7f762c>
+ 376:	08 95       	ret
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:692
+      // don't waste flash on smallest parts.
+      if ((pin & 0x7F) > 0x1F) { // highest valid mux value for any 0 or 1-series part.
+        return ADC_ERROR_BAD_PIN_OR_CHANNEL;
+      }
+    #endif
+    if (!ADC0.CTRLA & 0x01) return ADC_ERROR_DISABLED;
+ 378:	89 ef       	ldi	r24, 0xF9	; 249
+ 37a:	92 e8       	ldi	r25, 0x82	; 130
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:710
+    /* Wait for result ready */
+    while (!(ADC0.INTFLAGS & ADC_RESRDY_bm));
+
+    /* Combine two bytes */
+    return ADC0.RES;
+  }
+ 37c:	08 95       	ret
+
+0000037e <readSupplyVoltage()>:
+_Z17readSupplyVoltagev():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:659
+  switch (mode) {
+    #if defined(EXTERNAL)
+      case EXTERNAL:
+    #endif
+    case VDD:
+      VREF.CTRLB &= ~VREF_ADC0REFEN_bm; // Turn off force-adc-reference-enable
+ 37e:	e0 ea       	ldi	r30, 0xA0	; 160
+ 380:	f0 e0       	ldi	r31, 0x00	; 0
+ 382:	81 81       	ldd	r24, Z+1	; 0x01
+ 384:	8d 7f       	andi	r24, 0xFD	; 253
+ 386:	81 83       	std	Z+1, r24	; 0x01
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_analog.c:660
+      ADC0.CTRLC = (ADC0.CTRLC & ~(ADC_REFSEL_gm)) | mode | ADC_SAMPCAP_bm; // per datasheet, recommended SAMPCAP=1 at ref > 1v - we don't *KNOW* the external reference will be >1v, but it's probably more likely...
+ 388:	a0 e0       	ldi	r26, 0x00	; 0
+ 38a:	b6 e0       	ldi	r27, 0x06	; 6
+ 38c:	12 96       	adiw	r26, 0x02	; 2
+ 38e:	8c 91       	ld	r24, X
+ 390:	12 97       	sbiw	r26, 0x02	; 2
+ 392:	8f 7c       	andi	r24, 0xCF	; 207
+ 394:	80 65       	ori	r24, 0x50	; 80
+ 396:	12 96       	adiw	r26, 0x02	; 2
+ 398:	8c 93       	st	X, r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:400
+  sleep_cpu();// go to sleep
+}
+
+uint16_t readSupplyVoltage() { //returns value in millivolts  taken from megaTinyCore example
+  analogReference(VDD);
+  VREF.CTRLA = VREF_ADC0REFSEL_1V5_gc;
+ 39a:	80 e4       	ldi	r24, 0x40	; 64
+ 39c:	80 83       	st	Z, r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:406
+  // there is a settling time between when reference is turned on, and when it becomes valid.
+  // since the reference is normally turned on only when it is requested, this virtually guarantees
+  // that the first reading will be garbage; subsequent readings taken immediately after will be fine.
+  // VREF.CTRLB|=VREF_ADC0REFEN_bm;
+  // delay(10);
+  uint16_t reading = analogRead(ADC_INTREF);
+ 39e:	d9 df       	rcall	.-78     	; 0x352 <analogRead.constprop.7>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:407
+  reading = analogRead(ADC_INTREF);
+ 3a0:	d8 df       	rcall	.-80     	; 0x352 <analogRead.constprop.7>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:409
+  uint32_t intermediate = 1023UL * 1500;
+  reading = intermediate / reading;
+ 3a2:	9c 01       	movw	r18, r24
+ 3a4:	50 e0       	ldi	r21, 0x00	; 0
+ 3a6:	40 e0       	ldi	r20, 0x00	; 0
+ 3a8:	64 e2       	ldi	r22, 0x24	; 36
+ 3aa:	7a e6       	ldi	r23, 0x6A	; 106
+ 3ac:	87 e1       	ldi	r24, 0x17	; 23
+ 3ae:	90 e0       	ldi	r25, 0x00	; 0
+ 3b0:	18 d4       	rcall	.+2096   	; 0xbe2 <__udivmodsi4>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:411
+  return reading;
+}
+ 3b2:	c9 01       	movw	r24, r18
+ 3b4:	08 95       	ret
+
+000003b6 <displayBatt()>:
+_Z11displayBattv():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:119
+void displayTime(uint8_t hourPos, uint8_t minutesPos) { // draws time in display
+  drawTime(hourPos, 1, 32, hours);
+  drawTime(minutesPos, 1, 32, minutes);
+}
+
+uint8_t displayBatt (void) {
+ 3b6:	0f 93       	push	r16
+ 3b8:	cf 93       	push	r28
+ 3ba:	df 93       	push	r29
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:120
+  uint16_t actualVoltage = constrain(readSupplyVoltage (), MINVOLTAGE, MAXVOLTAGE);// read batt voltage and discards values outside range
+ 3bc:	e0 df       	rcall	.-64     	; 0x37e <readSupplyVoltage()>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:121
+  actualVoltage = map(actualVoltage, MINVOLTAGE, MAXVOLTAGE, 0, 117);
+ 3be:	85 30       	cpi	r24, 0x05	; 5
+ 3c0:	20 e1       	ldi	r18, 0x10	; 16
+ 3c2:	92 07       	cpc	r25, r18
+ 3c4:	10 f0       	brcs	.+4      	; 0x3ca <displayBatt()+0x14>
+ 3c6:	84 e0       	ldi	r24, 0x04	; 4
+ 3c8:	90 e1       	ldi	r25, 0x10	; 16
+ 3ca:	88 3b       	cpi	r24, 0xB8	; 184
+ 3cc:	2b e0       	ldi	r18, 0x0B	; 11
+ 3ce:	92 07       	cpc	r25, r18
+ 3d0:	10 f4       	brcc	.+4      	; 0x3d6 <displayBatt()+0x20>
+ 3d2:	88 eb       	ldi	r24, 0xB8	; 184
+ 3d4:	9b e0       	ldi	r25, 0x0B	; 11
+ 3d6:	b0 e0       	ldi	r27, 0x00	; 0
+ 3d8:	a0 e0       	ldi	r26, 0x00	; 0
+map():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore\api/Common.cpp:5
+#include "Common.h"
+
+/* C++ prototypes */
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+ 3da:	9c 01       	movw	r18, r24
+ 3dc:	ad 01       	movw	r20, r26
+ 3de:	28 5b       	subi	r18, 0xB8	; 184
+ 3e0:	3b 40       	sbci	r19, 0x0B	; 11
+ 3e2:	41 09       	sbc	r20, r1
+ 3e4:	51 09       	sbc	r21, r1
+ 3e6:	a5 e7       	ldi	r26, 0x75	; 117
+ 3e8:	b0 e0       	ldi	r27, 0x00	; 0
+ 3ea:	45 d4       	rcall	.+2186   	; 0xc76 <__muluhisi3>
+ 3ec:	2c e4       	ldi	r18, 0x4C	; 76
+ 3ee:	34 e0       	ldi	r19, 0x04	; 4
+ 3f0:	40 e0       	ldi	r20, 0x00	; 0
+ 3f2:	50 e0       	ldi	r21, 0x00	; 0
+ 3f4:	18 d4       	rcall	.+2096   	; 0xc26 <__divmodsi4>
+ 3f6:	42 2f       	mov	r20, r18
+_Z11displayBattv():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:121
+ 3f8:	d2 2f       	mov	r29, r18
+ 3fa:	c3 2f       	mov	r28, r19
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:124
+
+  for (uint8_t x = 224; x > 159; x -= 64) { // draw a line in bytes 10100000 or dec. 160 for low batt and 11100000 dec. 224 for normal batt level
+    oled.drawLine (10, 3, actualVoltage, x); // indicates batt and low batt on screen
+ 3fc:	20 ee       	ldi	r18, 0xE0	; 224
+ 3fe:	63 e0       	ldi	r22, 0x03	; 3
+ 400:	8a e0       	ldi	r24, 0x0A	; 10
+ 402:	9b de       	rcall	.-714    	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+ 404:	4d 2f       	mov	r20, r29
+ 406:	5c 2f       	mov	r21, r28
+ 408:	45 31       	cpi	r20, 0x15	; 21
+ 40a:	51 05       	cpc	r21, r1
+ 40c:	10 f0       	brcs	.+4      	; 0x412 <__LOCK_REGION_LENGTH__+0x12>
+ 40e:	44 e1       	ldi	r20, 0x14	; 20
+ 410:	50 e0       	ldi	r21, 0x00	; 0
+ 412:	c4 2f       	mov	r28, r20
+ 414:	20 ea       	ldi	r18, 0xA0	; 160
+ 416:	63 e0       	ldi	r22, 0x03	; 3
+ 418:	8a e0       	ldi	r24, 0x0A	; 10
+ 41a:	8f de       	rcall	.-738    	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:129
+
+    if (actualVoltage > 20) actualVoltage = 20;// number to display low batt from pixel 0 to pixel 20 of the batt bar
+  }
+
+  if (!BATTCHR) drawSprite(0, 3, battSprite, 8, 1);// draws battery or charging icon if connected to usb, doesn´t draw any icon if batt is too low
+ 41c:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 420:	84 ff       	sbrs	r24, 4
+ 422:	07 c0       	rjmp	.+14     	; 0x432 <__LOCK_REGION_LENGTH__+0x32>
+ 424:	01 e0       	ldi	r16, 0x01	; 1
+ 426:	28 e0       	ldi	r18, 0x08	; 8
+ 428:	4a ea       	ldi	r20, 0xAA	; 170
+ 42a:	5f e8       	ldi	r21, 0x8F	; 143
+ 42c:	63 e0       	ldi	r22, 0x03	; 3
+ 42e:	80 e0       	ldi	r24, 0x00	; 0
+ 430:	f3 de       	rcall	.-538    	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:131
+
+  if (BATTCHR) drawSprite(0, 3, chargingSprite, 8, 1);
+ 432:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 436:	84 fd       	sbrc	r24, 4
+ 438:	07 c0       	rjmp	.+14     	; 0x448 <__LOCK_REGION_LENGTH__+0x48>
+ 43a:	01 e0       	ldi	r16, 0x01	; 1
+ 43c:	28 e0       	ldi	r18, 0x08	; 8
+ 43e:	4d ed       	ldi	r20, 0xDD	; 221
+ 440:	5f e8       	ldi	r21, 0x8F	; 143
+ 442:	63 e0       	ldi	r22, 0x03	; 3
+ 444:	80 e0       	ldi	r24, 0x00	; 0
+ 446:	e8 de       	rcall	.-560    	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:133
+  return actualVoltage;
+}
+ 448:	8c 2f       	mov	r24, r28
+ 44a:	df 91       	pop	r29
+ 44c:	cf 91       	pop	r28
+ 44e:	0f 91       	pop	r16
+ 450:	08 95       	ret
+
+00000452 <__vector_7>:
+__vector_7():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:445
+    ledColor = 0;
+    PORTA.DIR = 0b00000000;   // turn off all leds.
+  }
+}
+
+ISR(RTC_PIT_vect) {
+ 452:	1f 92       	push	r1
+ 454:	0f 92       	push	r0
+ 456:	0f b6       	in	r0, 0x3f	; 63
+ 458:	0f 92       	push	r0
+ 45a:	11 24       	eor	r1, r1
+ 45c:	8f 93       	push	r24
+ 45e:	9f 93       	push	r25
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:447
+  /* Clear flag by writing '1': */
+  RTC.PITINTFLAGS = RTC_PI_bm;
+ 460:	91 e0       	ldi	r25, 0x01	; 1
+ 462:	90 93 53 01 	sts	0x0153, r25	; 0x800153 <numbers+0x7f716e>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:449
+
+  if (seconds++, seconds > 59) {// acutal time keeping
+ 466:	80 91 08 3f 	lds	r24, 0x3F08	; 0x803f08 <seconds>
+ 46a:	8f 5f       	subi	r24, 0xFF	; 255
+ 46c:	8c 33       	cpi	r24, 0x3C	; 60
+ 46e:	70 f4       	brcc	.+28     	; 0x48c <__vector_7+0x3a>
+ 470:	80 93 08 3f 	sts	0x3F08, r24	; 0x803f08 <seconds>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:463
+        hours = 0;
+      }
+    }
+  }
+
+  if (!shouldWakeUp) sleep_cpu();// beacause of interrupt only if true wake up
+ 474:	80 91 01 3f 	lds	r24, 0x3F01	; 0x803f01 <shouldWakeUp>
+ 478:	81 11       	cpse	r24, r1
+ 47a:	01 c0       	rjmp	.+2      	; 0x47e <__vector_7+0x2c>
+ 47c:	88 95       	sleep
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:464
+}
+ 47e:	9f 91       	pop	r25
+ 480:	8f 91       	pop	r24
+ 482:	0f 90       	pop	r0
+ 484:	0f be       	out	0x3f, r0	; 63
+ 486:	0f 90       	pop	r0
+ 488:	1f 90       	pop	r1
+ 48a:	18 95       	reti
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:450
+ISR(RTC_PIT_vect) {
+  /* Clear flag by writing '1': */
+  RTC.PITINTFLAGS = RTC_PI_bm;
+
+  if (seconds++, seconds > 59) {// acutal time keeping
+    seconds = 0;
+ 48c:	10 92 08 3f 	sts	0x3F08, r1	; 0x803f08 <seconds>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:452
+
+    if (alwaysOn) shouldWakeUp = true;// wake to draw allways on display
+ 490:	80 91 0b 3f 	lds	r24, 0x3F0B	; 0x803f0b <alwaysOn>
+ 494:	81 11       	cpse	r24, r1
+ 496:	90 93 01 3f 	sts	0x3F01, r25	; 0x803f01 <shouldWakeUp>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:454
+
+    if (minutes++, minutes > 59) {
+ 49a:	80 91 09 3f 	lds	r24, 0x3F09	; 0x803f09 <minutes>
+ 49e:	8f 5f       	subi	r24, 0xFF	; 255
+ 4a0:	8c 33       	cpi	r24, 0x3C	; 60
+ 4a2:	18 f4       	brcc	.+6      	; 0x4aa <__vector_7+0x58>
+ 4a4:	80 93 09 3f 	sts	0x3F09, r24	; 0x803f09 <minutes>
+ 4a8:	e5 cf       	rjmp	.-54     	; 0x474 <__vector_7+0x22>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:455
+      minutes = 0;
+ 4aa:	10 92 09 3f 	sts	0x3F09, r1	; 0x803f09 <minutes>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:457
+
+      if (hours++, hours > 23) {
+ 4ae:	80 91 0a 3f 	lds	r24, 0x3F0A	; 0x803f0a <hours>
+ 4b2:	8f 5f       	subi	r24, 0xFF	; 255
+ 4b4:	88 31       	cpi	r24, 0x18	; 24
+ 4b6:	18 f4       	brcc	.+6      	; 0x4be <__vector_7+0x6c>
+ 4b8:	80 93 0a 3f 	sts	0x3F0A, r24	; 0x803f0a <hours>
+ 4bc:	db cf       	rjmp	.-74     	; 0x474 <__vector_7+0x22>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:458
+        hours = 0;
+ 4be:	10 92 0a 3f 	sts	0x3F0A, r1	; 0x803f0a <hours>
+ 4c2:	d8 cf       	rjmp	.-80     	; 0x474 <__vector_7+0x22>
+
+000004c4 <__vector_13>:
+__vector_13():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:433
+  interruptTimer = 0;
+  timer = 0;
+  sleep_disable();
+}
+
+ISR(TCB0_INT_vect) {
+ 4c4:	1f 92       	push	r1
+ 4c6:	0f 92       	push	r0
+ 4c8:	0f b6       	in	r0, 0x3f	; 63
+ 4ca:	0f 92       	push	r0
+ 4cc:	11 24       	eor	r1, r1
+ 4ce:	2f 93       	push	r18
+ 4d0:	8f 93       	push	r24
+ 4d2:	9f 93       	push	r25
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:435
+  /* The interrupt flag has to be cleared manually */
+  TCB0_INTFLAGS = 1; // clear flag
+ 4d4:	81 e0       	ldi	r24, 0x01	; 1
+ 4d6:	80 93 46 0a 	sts	0x0A46, r24	; 0x800a46 <numbers+0x7f7a61>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:436
+  interruptTimer++;
+ 4da:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 4de:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 4e2:	01 96       	adiw	r24, 0x01	; 1
+ 4e4:	80 93 12 3f 	sts	0x3F12, r24	; 0x803f12 <interruptTimer>
+ 4e8:	90 93 13 3f 	sts	0x3F13, r25	; 0x803f13 <interruptTimer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:438
+
+  if (chargeLedIndicator && interruptTimer > 2000) {
+ 4ec:	80 91 00 3f 	lds	r24, 0x3F00	; 0x803f00 <__DATA_REGION_ORIGIN__>
+ 4f0:	88 23       	and	r24, r24
+ 4f2:	69 f0       	breq	.+26     	; 0x50e <__vector_13+0x4a>
+ 4f4:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 4f8:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 4fc:	81 3d       	cpi	r24, 0xD1	; 209
+ 4fe:	97 40       	sbci	r25, 0x07	; 7
+ 500:	30 f0       	brcs	.+12     	; 0x50e <__vector_13+0x4a>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:439
+    chargeLedIndicator = false;
+ 502:	10 92 00 3f 	sts	0x3F00, r1	; 0x803f00 <__DATA_REGION_ORIGIN__>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:440
+    ledColor = 0;
+ 506:	10 92 05 3f 	sts	0x3F05, r1	; 0x803f05 <ledColor>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:441
+    PORTA.DIR = 0b00000000;   // turn off all leds.
+ 50a:	10 92 00 04 	sts	0x0400, r1	; 0x800400 <numbers+0x7f741b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:443
+  }
+}
+ 50e:	9f 91       	pop	r25
+ 510:	8f 91       	pop	r24
+ 512:	2f 91       	pop	r18
+ 514:	0f 90       	pop	r0
+ 516:	0f be       	out	0x3f, r0	; 63
+ 518:	0f 90       	pop	r0
+ 51a:	1f 90       	pop	r1
+ 51c:	18 95       	reti
+
+0000051e <__vector_3>:
+__vector_3():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:414
+  reading = intermediate / reading;
+  return reading;
+}
+
+
+ISR(PORTA_PORT_vect) {
+ 51e:	1f 92       	push	r1
+ 520:	0f 92       	push	r0
+ 522:	0f b6       	in	r0, 0x3f	; 63
+ 524:	0f 92       	push	r0
+ 526:	11 24       	eor	r1, r1
+ 528:	8f 93       	push	r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:415
+  if (PORTA.INTFLAGS & PIN4_bm) {
+ 52a:	80 91 09 04 	lds	r24, 0x0409	; 0x800409 <numbers+0x7f7424>
+ 52e:	84 ff       	sbrs	r24, 4
+ 530:	0a c0       	rjmp	.+20     	; 0x546 <__vector_3+0x28>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:417
+
+    if (BATTCHR) {
+ 532:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 536:	84 fd       	sbrc	r24, 4
+ 538:	06 c0       	rjmp	.+12     	; 0x546 <__vector_3+0x28>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:418
+      chargeLedIndicator = true;
+ 53a:	81 e0       	ldi	r24, 0x01	; 1
+ 53c:	80 93 00 3f 	sts	0x3F00, r24	; 0x803f00 <__DATA_REGION_ORIGIN__>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:419
+      PORTA.DIR = 0b00001000; // turn on red led for charging
+ 540:	88 e0       	ldi	r24, 0x08	; 8
+ 542:	80 93 00 04 	sts	0x0400, r24	; 0x800400 <numbers+0x7f741b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:423
+    }
+  }
+  //PORTA.PIN4CTRL &= ~PORT_ISC_gm;   // disable  interrupts.
+  PORTA.PIN5CTRL &= ~PORT_ISC_gm;
+ 546:	80 91 15 04 	lds	r24, 0x0415	; 0x800415 <numbers+0x7f7430>
+ 54a:	88 7f       	andi	r24, 0xF8	; 248
+ 54c:	80 93 15 04 	sts	0x0415, r24	; 0x800415 <numbers+0x7f7430>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:424
+  VPORTA.INTFLAGS = (1 << 4) | (1 << 5); // clear interrupts flag
+ 550:	80 e3       	ldi	r24, 0x30	; 48
+ 552:	83 b9       	out	0x03, r24	; 3
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:425
+  shouldWakeUp = true;
+ 554:	81 e0       	ldi	r24, 0x01	; 1
+ 556:	80 93 01 3f 	sts	0x3F01, r24	; 0x803f01 <shouldWakeUp>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:426
+  resumeOperation = true; // if screen always on is off reset screen after sleep
+ 55a:	80 93 02 3f 	sts	0x3F02, r24	; 0x803f02 <resumeOperation>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:427
+  alwaysOn = false;
+ 55e:	10 92 0b 3f 	sts	0x3F0B, r1	; 0x803f0b <alwaysOn>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:428
+  interruptTimer = 0;
+ 562:	10 92 12 3f 	sts	0x3F12, r1	; 0x803f12 <interruptTimer>
+ 566:	10 92 13 3f 	sts	0x3F13, r1	; 0x803f13 <interruptTimer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:429
+  timer = 0;
+ 56a:	10 92 10 3f 	sts	0x3F10, r1	; 0x803f10 <timer>
+ 56e:	10 92 11 3f 	sts	0x3F11, r1	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:430
+  sleep_disable();
+ 572:	80 91 50 00 	lds	r24, 0x0050	; 0x800050 <numbers+0x7f706b>
+ 576:	8e 7f       	andi	r24, 0xFE	; 254
+ 578:	80 93 50 00 	sts	0x0050, r24	; 0x800050 <numbers+0x7f706b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:431
+}
+ 57c:	8f 91       	pop	r24
+ 57e:	0f 90       	pop	r0
+ 580:	0f be       	out	0x3f, r0	; 63
+ 582:	0f 90       	pop	r0
+ 584:	1f 90       	pop	r1
+ 586:	18 95       	reti
+
+00000588 <main>:
+main():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:49
+ * called first in non-optiboot configurations (neither is needed on Optibooot configurations() *
+ * an extra bit of initialization code in .init3 to fix the vectors and still happen if user    *
+ * overrides main. In the past there was a USB-related function here, that is removed, as work  *
+ * will be needed in any event at the core level if VUSB-based "stuff" arrives, but really I'm  *
+ * just waiting for the DU-series now                                                           */
+int main() {
+ 588:	cf 93       	push	r28
+ 58a:	df 93       	push	r29
+ 58c:	cd b7       	in	r28, 0x3d	; 61
+ 58e:	de b7       	in	r29, 0x3e	; 62
+ 590:	25 97       	sbiw	r28, 0x05	; 5
+ 592:	cd bf       	out	0x3d, r28	; 61
+ 594:	de bf       	out	0x3e, r29	; 62
+init_clock():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1513
+      #elif (F_CPU == 8000000) // 16MHz prescaled by 2
+        /* Clock DIV2 */
+        _PROTECTED_WRITE(CLKCTRL_MCLKCTRLB, (CLKCTRL_PEN_bm | CLKCTRL_PDIV_2X_gc));
+      #elif (F_CPU == 5000000) // 20MHz prescaled by 4
+        /* Clock DIV4 */
+        _PROTECTED_WRITE(CLKCTRL_MCLKCTRLB, (CLKCTRL_PEN_bm | CLKCTRL_PDIV_4X_gc));
+ 596:	28 ed       	ldi	r18, 0xD8	; 216
+ 598:	33 e0       	ldi	r19, 0x03	; 3
+ 59a:	24 bf       	out	0x34, r18	; 52
+ 59c:	30 93 61 00 	sts	0x0061, r19	; 0x800061 <numbers+0x7f707c>
+init_ADC0():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1616
+
+
+/********************************* ADC ****************************************/
+void __attribute__((weak)) init_ADC0() {
+  ADC_t* pADC;
+  _fastPtr_d(pADC, &ADC0);
+ 5a0:	e0 e0       	ldi	r30, 0x00	; 0
+ 5a2:	f6 e0       	ldi	r31, 0x06	; 6
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1641
+    #elif F_CPU  >= 12000000    // 16 MHz / 16 = 1.0 MHz,  20 MHz / 16 = 1.25 MHz
+      pADC->CTRLC  = ADC_PRESC_DIV16_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #elif F_CPU  >=  6000000    //  8 MHz /  8 = 1.0 MHz,  10 MHz /  8 = 1.25 MHz
+      pADC->CTRLC  =  ADC_PRESC_DIV8_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #elif F_CPU  >=  3000000    //  4 MHz /  4 = 1.0 MHz,   5 MHz /  4 = 1.25 MHz
+      pADC->CTRLC  =  ADC_PRESC_DIV4_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+ 5a4:	81 e5       	ldi	r24, 0x51	; 81
+ 5a6:	82 83       	std	Z+2, r24	; 0x02
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1648
+      pADC->CTRLC  =  ADC_PRESC_DIV2_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #endif
+    #if   (F_CPU == 6000000 || F_CPU == 12000000 || F_CPU == 24000000 || F_CPU ==25000000)
+      pADC->SAMPCTRL = (7); // 9 ADC clocks, 12 us
+    #elif (F_CPU == 5000000 || F_CPU == 10000000 || F_CPU == 20000000)
+      pADC->SAMPCTRL = (13);   // 15 ADC clock,s 12 us
+ 5a8:	8d e0       	ldi	r24, 0x0D	; 13
+ 5aa:	85 83       	std	Z+5, r24	; 0x05
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1652
+    #else
+      pADC->SAMPCTRL = (10); // 12 ADC clocks, 12 us
+    #endif
+    pADC->CTRLD    = ADC_INITDLY_DLY16_gc;
+ 5ac:	80 e2       	ldi	r24, 0x20	; 32
+ 5ae:	83 83       	std	Z+3, r24	; 0x03
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1653
+    pADC->CTRLA    = ADC_ENABLE_bm;
+ 5b0:	81 e0       	ldi	r24, 0x01	; 1
+ 5b2:	80 83       	st	Z, r24
+init_TCA0():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1743
+
+void __attribute__((weak)) init_TCA0() {
+  /*  TYPE A TIMER   */
+  #if !defined(TCA_BUFFERED_3PIN)
+    #if defined(PORTMUX_CTRLC)
+      PORTMUX.CTRLC = TCA_PORTMUX;
+ 5b4:	9f e0       	ldi	r25, 0x0F	; 15
+ 5b6:	90 93 02 02 	sts	0x0202, r25	; 0x800202 <numbers+0x7f721d>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1747
+    #else
+      PORTMUX.TCAROUTEA = TCA_PORTMUX;
+    #endif
+    TCA0.SPLIT.CTRLD   = TCA_SPLIT_SPLITM_bm;
+ 5ba:	80 93 03 0a 	sts	0x0A03, r24	; 0x800a03 <numbers+0x7f7a1e>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1748
+    TCA0.SPLIT.LPER    = PWM_TIMER_PERIOD;
+ 5be:	9e ef       	ldi	r25, 0xFE	; 254
+ 5c0:	90 93 26 0a 	sts	0x0A26, r25	; 0x800a26 <numbers+0x7f7a41>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1749
+    TCA0.SPLIT.HPER    = PWM_TIMER_PERIOD;
+ 5c4:	90 93 27 0a 	sts	0x0A27, r25	; 0x800a27 <numbers+0x7f7a42>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring.c:1750
+    TCA0.SPLIT.CTRLA   = (TIMERA_PRESCALER_bm | TCA_SPLIT_ENABLE_bm);
+ 5c8:	99 e0       	ldi	r25, 0x09	; 9
+ 5ca:	90 93 00 0a 	sts	0x0A00, r25	; 0x800a00 <numbers+0x7f7a1b>
+main():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/main.cpp:53
+  onBeforeInit(); // Emnpty callback called before init but after the .init stuff. First normal code executed
+  init(); // Interrupts are turned on just prior to init() returning.
+  initVariant();
+  if (!onAfterInit()) sei();  // enable interrupts.
+ 5ce:	78 94       	sei
+setup():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:57
+volatile uint16_t interruptTimer = 0;
+volatile uint16_t timer = 0;
+
+void setup() {
+
+  PORTA.DIR = 0b00001000; // setup ports in and out //  pin2 (GREEN) on
+ 5d0:	98 e0       	ldi	r25, 0x08	; 8
+ 5d2:	90 93 00 04 	sts	0x0400, r25	; 0x800400 <numbers+0x7f741b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:58
+  PORTB.DIR = 0b00000011; // setup ports in and out
+ 5d6:	30 93 20 04 	sts	0x0420, r19	; 0x800420 <numbers+0x7f743b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:59
+  PORTC.DIR = 0b00000001; // setup ports in and out
+ 5da:	80 93 40 04 	sts	0x0440, r24	; 0x800440 <numbers+0x7f745b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:60
+  PORTA.PIN4CTRL = PORT_PULLUPEN_bm;// charge pin pullup
+ 5de:	90 93 14 04 	sts	0x0414, r25	; 0x800414 <numbers+0x7f742f>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:61
+  PORTA.PIN5CTRL = PORT_PULLUPEN_bm;// button pullup
+ 5e2:	90 93 15 04 	sts	0x0415, r25	; 0x800415 <numbers+0x7f7430>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:62
+  PORTA.PIN4CTRL  |= PORT_ISC_BOTHEDGES_gc; //attach interrupt to portA pin 4 keeps pull up enabled
+ 5e6:	90 91 14 04 	lds	r25, 0x0414	; 0x800414 <numbers+0x7f742f>
+ 5ea:	91 60       	ori	r25, 0x01	; 1
+ 5ec:	90 93 14 04 	sts	0x0414, r25	; 0x800414 <numbers+0x7f742f>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:64
+
+  CCP = 0xD8;
+ 5f0:	24 bf       	out	0x34, r18	; 52
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:65
+  CLKCTRL.XOSC32KCTRLA = CLKCTRL_ENABLE_bm;   //Enable the external crystal
+ 5f2:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <numbers+0x7f7097>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:66
+  while (RTC.STATUS > 0); /* Wait for all register to be synchronized */
+ 5f6:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <numbers+0x7f715c>
+ 5fa:	81 11       	cpse	r24, r1
+ 5fc:	fc cf       	rjmp	.-8      	; 0x5f6 <main+0x6e>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:67
+  RTC.CTRLA = RTC_PRESCALER_DIV1_gc   /* 1 */
+ 5fe:	80 e8       	ldi	r24, 0x80	; 128
+ 600:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <numbers+0x7f715b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:70
+              | 0 << RTC_RTCEN_bp     /* Enable: disabled */
+              | 1 << RTC_RUNSTDBY_bp; /* Run In Standby: enabled */
+  RTC.CLKSEL = RTC_CLKSEL_TOSC32K_gc; /* 32.768kHz External Crystal Oscillator (XOSC32K) */
+ 604:	82 e0       	ldi	r24, 0x02	; 2
+ 606:	80 93 47 01 	sts	0x0147, r24	; 0x800147 <numbers+0x7f7162>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:71
+  while (RTC.PITSTATUS > 0) {} /* Wait for all register to be synchronized */
+ 60a:	80 91 51 01 	lds	r24, 0x0151	; 0x800151 <numbers+0x7f716c>
+ 60e:	81 11       	cpse	r24, r1
+ 610:	fc cf       	rjmp	.-8      	; 0x60a <main+0x82>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:72
+  RTC.PITCTRLA = RTC_PERIOD_CYC32768_gc /* RTC Clock Cycles 32768 */
+ 612:	81 e7       	ldi	r24, 0x71	; 113
+ 614:	80 93 50 01 	sts	0x0150, r24	; 0x800150 <numbers+0x7f716b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:74
+                 | 1 << RTC_PITEN_bp;   /* Enable: enabled */
+  RTC.PITINTCTRL = 1 << RTC_PI_bp; /* Periodic Interrupt: enabled */
+ 618:	81 e0       	ldi	r24, 0x01	; 1
+ 61a:	80 93 52 01 	sts	0x0152, r24	; 0x800152 <numbers+0x7f716d>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:76
+
+  TCB0.INTCTRL = TCB_CAPT_bm; // Setup Timer B as compare capture mode to trigger interrupt
+ 61e:	80 93 45 0a 	sts	0x0A45, r24	; 0x800a45 <numbers+0x7f7a60>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:77
+  TCB0_CCMP = 2000;// CLK
+ 622:	80 ed       	ldi	r24, 0xD0	; 208
+ 624:	97 e0       	ldi	r25, 0x07	; 7
+ 626:	80 93 4c 0a 	sts	0x0A4C, r24	; 0x800a4c <numbers+0x7f7a67>
+ 62a:	90 93 4d 0a 	sts	0x0A4D, r25	; 0x800a4d <numbers+0x7f7a68>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:78
+  TCB0_CTRLA = (1 << 1) | TCB_ENABLE_bm;
+ 62e:	83 e0       	ldi	r24, 0x03	; 3
+ 630:	80 93 40 0a 	sts	0x0A40, r24	; 0x800a40 <numbers+0x7f7a5b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:80
+
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);// configure sleep mode
+ 634:	80 91 50 00 	lds	r24, 0x0050	; 0x800050 <numbers+0x7f706b>
+ 638:	89 7f       	andi	r24, 0xF9	; 249
+ 63a:	84 60       	ori	r24, 0x04	; 4
+ 63c:	80 93 50 00 	sts	0x0050, r24	; 0x800050 <numbers+0x7f706b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:81
+  sei();
+ 640:	78 94       	sei
+options():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:220
+  }
+}
+
+void options (void) { // options menu
+  int8_t option = 0;
+  const uint8_t spriteOptionPos [] = {100, 70, 40, 10};
+ 642:	40 90 a6 8c 	lds	r4, 0x8CA6	; 0x808ca6 <__bss_end+0x4d91>
+ 646:	50 90 a7 8c 	lds	r5, 0x8CA7	; 0x808ca7 <__bss_end+0x4d92>
+ 64a:	60 90 a8 8c 	lds	r6, 0x8CA8	; 0x808ca8 <__bss_end+0x4d93>
+ 64e:	70 90 a9 8c 	lds	r7, 0x8CA9	; 0x808ca9 <__bss_end+0x4d94>
+setTimer():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:272
+
+    if (BUTTONLOW) {
+      timer = interruptTimer;
+
+      if (totalSeconds += 300, totalSeconds > 1800) totalSeconds = 0;
+      drawTime(0, 1, 32, (totalSeconds / 60));
+ 652:	9c e3       	ldi	r25, 0x3C	; 60
+ 654:	29 2e       	mov	r2, r25
+ 656:	31 2c       	mov	r3, r1
+pinMode():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:53
+  volatile uint8_t * port_base = (volatile uint8_t *) (uint16_t) ((&PORTA) + digitalPinToPort(pin));
+  if (mode & 0x01) {
+    // OUTPUT mode, so write DIRSET with the mask.
+    *(port_base + 1) = bit_mask;
+  } else { // otherwise it's input so we write DIRCLR
+    *(port_base + 2) = bit_mask;
+ 658:	ff 24       	eor	r15, r15
+ 65a:	f3 94       	inc	r15
+ 65c:	ee 24       	eor	r14, r14
+ 65e:	e3 94       	inc	r14
+loop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:85
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);// configure sleep mode
+  sei();
+}
+
+void loop() {
+  wakeUpFromSleep(resumeOperation);// restart display after wake up
+ 660:	80 91 02 3f 	lds	r24, 0x3F02	; 0x803f02 <resumeOperation>
+wakeUpFromSleep():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:190
+  }
+}
+
+void wakeUpFromSleep(bool activateScreen) {
+
+  if (!activateScreen) return;
+ 664:	88 23       	and	r24, r24
+ 666:	09 f4       	brne	.+2      	; 0x66a <main+0xe2>
+ 668:	44 c0       	rjmp	.+136    	; 0x6f2 <main+0x16a>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:191
+  OLED_RST //reset screen
+ 66a:	80 91 44 04 	lds	r24, 0x0444	; 0x800444 <numbers+0x7f745f>
+ 66e:	8e 7f       	andi	r24, 0xFE	; 254
+ 670:	80 93 44 04 	sts	0x0444, r24	; 0x800444 <numbers+0x7f745f>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:192
+  while (!OLED_OFF); // wait until screen is reseted
+ 674:	80 91 44 04 	lds	r24, 0x0444	; 0x800444 <numbers+0x7f745f>
+ 678:	80 fd       	sbrc	r24, 0
+ 67a:	fc cf       	rjmp	.-8      	; 0x674 <main+0xec>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:193
+  OLED_ON
+ 67c:	80 91 44 04 	lds	r24, 0x0444	; 0x800444 <numbers+0x7f745f>
+ 680:	81 60       	ori	r24, 0x01	; 1
+ 682:	80 93 44 04 	sts	0x0444, r24	; 0x800444 <numbers+0x7f745f>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:194
+  buttonDebounce(100);
+ 686:	84 e6       	ldi	r24, 0x64	; 100
+ 688:	90 e0       	ldi	r25, 0x00	; 0
+ 68a:	7c dd       	rcall	.-1288   	; 0x184 <buttonDebounce(unsigned int)>
+pinMode():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:53
+ 68c:	22 e0       	ldi	r18, 0x02	; 2
+ 68e:	20 93 22 04 	sts	0x0422, r18	; 0x800422 <numbers+0x7f743d>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:78
+  // by 2 bytes and one clock. And let's hope it is, because the code above would suck too if it was in X.
+  // Handwritten assembly that exploited the knowledge that there will never be a carry would save 1 word and 1 clock.
+  // and could probably save at least several times that in initializing the port_base pointer. But if you're using
+  // pinMode you probably don't care.
+  port_base += (uint8_t) digitalPinToBitPosition(pin);
+  bit_mask = *(port_base + 0x10);
+ 692:	80 91 31 04 	lds	r24, 0x0431	; 0x800431 <numbers+0x7f744c>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:80
+  if (mode & 2) {
+    bit_mask |= 0x08;
+ 696:	88 60       	ori	r24, 0x08	; 8
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:84
+  } else {
+    bit_mask &= 0xF7;
+  }
+  *(port_base + 0x10) = bit_mask;
+ 698:	80 93 31 04 	sts	0x0431, r24	; 0x800431 <numbers+0x7f744c>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:53
+  volatile uint8_t * port_base = (volatile uint8_t *) (uint16_t) ((&PORTA) + digitalPinToPort(pin));
+  if (mode & 0x01) {
+    // OUTPUT mode, so write DIRSET with the mask.
+    *(port_base + 1) = bit_mask;
+  } else { // otherwise it's input so we write DIRCLR
+    *(port_base + 2) = bit_mask;
+ 69c:	f0 92 22 04 	sts	0x0422, r15	; 0x800422 <numbers+0x7f743d>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:78
+  // by 2 bytes and one clock. And let's hope it is, because the code above would suck too if it was in X.
+  // Handwritten assembly that exploited the knowledge that there will never be a carry would save 1 word and 1 clock.
+  // and could probably save at least several times that in initializing the port_base pointer. But if you're using
+  // pinMode you probably don't care.
+  port_base += (uint8_t) digitalPinToBitPosition(pin);
+  bit_mask = *(port_base + 0x10);
+ 6a0:	80 91 30 04 	lds	r24, 0x0430	; 0x800430 <numbers+0x7f744b>
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:80
+  if (mode & 2) {
+    bit_mask |= 0x08;
+ 6a4:	88 60       	ori	r24, 0x08	; 8
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore/wiring_digital.c:84
+  } else {
+    bit_mask &= 0xF7;
+  }
+  *(port_base + 0x10) = bit_mask;
+ 6a6:	80 93 30 04 	sts	0x0430, r24	; 0x800430 <numbers+0x7f744b>
+init():
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:259
+#if !defined(DXCORE)
+  pinMode(PIN_WIRE_SDA, INPUT_PULLUP);                            // Pullups on unless AVR DA/DB
+  pinMode(PIN_WIRE_SCL, INPUT_PULLUP);
+#endif
+  uint32_t baud = ((F_CPU/FREQUENCY) - (((F_CPU*T_RISE)/1000)/1000)/1000 - 10)/2;
+  TWI0.MBAUD = (uint8_t)baud;
+ 6aa:	10 92 16 08 	sts	0x0816, r1	; 0x800816 <numbers+0x7f7831>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:260
+  TWI0.MCTRLA = TWI_ENABLE_bm;                                    // Enable as master, no interrupts
+ 6ae:	f0 92 13 08 	sts	0x0813, r15	; 0x800813 <numbers+0x7f782e>
+C:\Users\gross\OneDrive\Arduino\libraries\tiny-i2c-master/TinyI2CMaster.cpp:261
+  TWI0.MSTATUS = TWI_BUSSTATE_IDLE_gc;
+ 6b2:	f0 92 15 08 	sts	0x0815, r15	; 0x800815 <numbers+0x7f7830>
+ 6b6:	02 eb       	ldi	r16, 0xB2	; 178
+ 6b8:	1f e8       	ldi	r17, 0x8F	; 143
+begin():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:76
+SSD1306Device::SSD1306Device(void) {}
+
+void SSD1306Device::begin(void) {
+  TinyI2C.init();
+  for (uint8_t i = 0; i < sizeof (ssd1306_init_sequence); i++) {
+    ssd1306_send_command(ssd1306_init_sequence[i]);
+ 6ba:	f8 01       	movw	r30, r16
+ 6bc:	81 91       	ld	r24, Z+
+ 6be:	8f 01       	movw	r16, r30
+ 6c0:	5a dd       	rcall	.-1356   	; 0x176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:75
+
+SSD1306Device::SSD1306Device(void) {}
+
+void SSD1306Device::begin(void) {
+  TinyI2C.init();
+  for (uint8_t i = 0; i < sizeof (ssd1306_init_sequence); i++) {
+ 6c2:	2d ec       	ldi	r18, 0xCD	; 205
+ 6c4:	3f e8       	ldi	r19, 0x8F	; 143
+ 6c6:	20 17       	cp	r18, r16
+ 6c8:	31 07       	cpc	r19, r17
+ 6ca:	b9 f7       	brne	.-18     	; 0x6ba <main+0x132>
+wakeUpFromSleep():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:196
+  oled.begin();// start oled screen
+  oled.clearScreen();
+ 6cc:	48 dd       	rcall	.-1392   	; 0x15e <SSD1306Device::clearScreen() [clone .constprop.10]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:197
+  displayTime(64, 0);
+ 6ce:	60 e0       	ldi	r22, 0x00	; 0
+ 6d0:	80 e4       	ldi	r24, 0x40	; 64
+ 6d2:	33 de       	rcall	.-922    	; 0x33a <displayTime(unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:198
+  displayBatt();
+ 6d4:	70 de       	rcall	.-800    	; 0x3b6 <displayBatt()>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:199
+  screenDimmed = false;
+ 6d6:	10 92 14 3f 	sts	0x3F14, r1	; 0x803f14 <screenDimmed>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:200
+  powerSaveMode = 0;
+ 6da:	10 92 0d 3f 	sts	0x3F0D, r1	; 0x803f0d <powerSaveMode>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:201
+  resumeOperation = false;
+ 6de:	10 92 02 3f 	sts	0x3F02, r1	; 0x803f02 <resumeOperation>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:202
+  timer = interruptTimer;
+ 6e2:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 6e6:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 6ea:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ 6ee:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+countdownTimer():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:164
+  }
+}
+
+void countdownTimer(void) {
+
+  if (totalSeconds == 0) return; // timer logic
+ 6f2:	00 91 0e 3f 	lds	r16, 0x3F0E	; 0x803f0e <totalSeconds>
+ 6f6:	10 91 0f 3f 	lds	r17, 0x3F0F	; 0x803f0f <totalSeconds+0x1>
+ 6fa:	01 15       	cp	r16, r1
+ 6fc:	11 05       	cpc	r17, r1
+ 6fe:	d1 f1       	breq	.+116    	; 0x774 <main+0x1ec>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:166
+
+  if (seconds != lastSecond) {
+ 700:	80 91 08 3f 	lds	r24, 0x3F08	; 0x803f08 <seconds>
+ 704:	90 91 04 3f 	lds	r25, 0x3F04	; 0x803f04 <__data_end>
+ 708:	89 17       	cp	r24, r25
+ 70a:	a1 f1       	breq	.+104    	; 0x774 <main+0x1ec>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:167
+    lastSecond = seconds;
+ 70c:	80 93 04 3f 	sts	0x3F04, r24	; 0x803f04 <__data_end>
+map():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore\api/Common.cpp:5
+ 710:	98 01       	movw	r18, r16
+ 712:	ae e7       	ldi	r26, 0x7E	; 126
+ 714:	b0 e0       	ldi	r27, 0x00	; 0
+ 716:	a3 d2       	rcall	.+1350   	; 0xc5e <__umulhisi3>
+countdownTimer():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:168
+    uint8_t timerBarValue = map(totalSeconds, 0 , totalSecondsTimer, 0, 126);
+ 718:	20 91 06 3f 	lds	r18, 0x3F06	; 0x803f06 <totalSecondsTimer>
+ 71c:	30 91 07 3f 	lds	r19, 0x3F07	; 0x803f07 <totalSecondsTimer+0x1>
+ 720:	50 e0       	ldi	r21, 0x00	; 0
+ 722:	40 e0       	ldi	r20, 0x00	; 0
+map():
+C:\Users\gross\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.7\cores\megatinycore\api/Common.cpp:5
+ 724:	80 d2       	rcall	.+1280   	; 0xc26 <__divmodsi4>
+ 726:	d2 2e       	mov	r13, r18
+countdownTimer():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:169
+    oled.drawLine (timerBarValue, 0, 2, 0B00000000);
+ 728:	20 e0       	ldi	r18, 0x00	; 0
+ 72a:	42 e0       	ldi	r20, 0x02	; 2
+ 72c:	60 e0       	ldi	r22, 0x00	; 0
+ 72e:	8d 2d       	mov	r24, r13
+ 730:	04 dd       	rcall	.-1528   	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:170
+    oled.drawLine (0, 0, timerBarValue, 0B00000011);
+ 732:	23 e0       	ldi	r18, 0x03	; 3
+ 734:	4d 2d       	mov	r20, r13
+ 736:	60 e0       	ldi	r22, 0x00	; 0
+ 738:	80 e0       	ldi	r24, 0x00	; 0
+ 73a:	ff dc       	rcall	.-1538   	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:172
+
+    if (totalSeconds--, totalSeconds < 1) {
+ 73c:	01 50       	subi	r16, 0x01	; 1
+ 73e:	11 09       	sbc	r17, r1
+ 740:	00 93 0e 3f 	sts	0x3F0E, r16	; 0x803f0e <totalSeconds>
+ 744:	10 93 0f 3f 	sts	0x3F0F, r17	; 0x803f0f <totalSeconds+0x1>
+ 748:	01 2b       	or	r16, r17
+ 74a:	41 f4       	brne	.+16     	; 0x75c <main+0x1d4>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:173
+      oled.clearScreen();
+ 74c:	08 dd       	rcall	.-1520   	; 0x15e <SSD1306Device::clearScreen() [clone .constprop.10]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:174
+      PORTA.DIR = (1 << 3);// pin3 (REDLED) as output
+ 74e:	38 e0       	ldi	r19, 0x08	; 8
+ 750:	30 93 00 04 	sts	0x0400, r19	; 0x800400 <numbers+0x7f741b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:175
+      while (BUTTONHIGH);
+ 754:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 758:	85 fd       	sbrc	r24, 5
+ 75a:	fc cf       	rjmp	.-8      	; 0x754 <main+0x1cc>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:178
+    }
+
+    if (PORTA.DIR != 0b00000000) {
+ 75c:	80 91 00 04 	lds	r24, 0x0400	; 0x800400 <numbers+0x7f741b>
+ 760:	88 23       	and	r24, r24
+ 762:	21 f0       	breq	.+8      	; 0x76c <main+0x1e4>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:179
+      ledColor = 0;
+ 764:	10 92 05 3f 	sts	0x3F05, r1	; 0x803f05 <ledColor>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:180
+      PORTA.DIR = 0b00000000;
+ 768:	10 92 00 04 	sts	0x0400, r1	; 0x800400 <numbers+0x7f741b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:183
+    }
+
+    displayBatt();
+ 76c:	24 de       	rcall	.-952    	; 0x3b6 <displayBatt()>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:184
+    displayTime(64, 0);
+ 76e:	60 e0       	ldi	r22, 0x00	; 0
+ 770:	80 e4       	ldi	r24, 0x40	; 64
+ 772:	e3 dd       	rcall	.-1082   	; 0x33a <displayTime(unsigned char, unsigned char)>
+loop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:88
+
+void loop() {
+  wakeUpFromSleep(resumeOperation);// restart display after wake up
+  countdownTimer(); // countdowntimer logic
+
+  if (buttonDebounce(300)) { // dimm screen or enter options menu if batt is too low can not enter the menu
+ 774:	8c e2       	ldi	r24, 0x2C	; 44
+ 776:	91 e0       	ldi	r25, 0x01	; 1
+ 778:	05 dd       	rcall	.-1526   	; 0x184 <buttonDebounce(unsigned int)>
+ 77a:	8d 83       	std	Y+5, r24	; 0x05
+ 77c:	88 23       	and	r24, r24
+ 77e:	09 f4       	brne	.+2      	; 0x782 <main+0x1fa>
+ 780:	9d c0       	rjmp	.+314    	; 0x8bc <main+0x334>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:90
+
+    if (!screenDimmed && displayBatt() != 0) {// only enter menu if batt is above 0 
+ 782:	80 91 14 3f 	lds	r24, 0x3F14	; 0x803f14 <screenDimmed>
+ 786:	81 11       	cpse	r24, r1
+ 788:	04 c2       	rjmp	.+1032   	; 0xb92 <main+0x60a>
+ 78a:	15 de       	rcall	.-982    	; 0x3b6 <displayBatt()>
+ 78c:	88 23       	and	r24, r24
+ 78e:	09 f4       	brne	.+2      	; 0x792 <main+0x20a>
+ 790:	00 c2       	rjmp	.+1024   	; 0xb92 <main+0x60a>
+options():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:220
+  }
+}
+
+void options (void) { // options menu
+  int8_t option = 0;
+  const uint8_t spriteOptionPos [] = {100, 70, 40, 10};
+ 792:	49 82       	std	Y+1, r4	; 0x01
+ 794:	5a 82       	std	Y+2, r5	; 0x02
+ 796:	6b 82       	std	Y+3, r6	; 0x03
+ 798:	7c 82       	std	Y+4, r7	; 0x04
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:222
+  bool setOptions = true;
+  oled.clearScreen();
+ 79a:	e1 dc       	rcall	.-1598   	; 0x15e <SSD1306Device::clearScreen() [clone .constprop.10]>
+ 79c:	85 ed       	ldi	r24, 0xD5	; 213
+ 79e:	c8 2e       	mov	r12, r24
+ 7a0:	8f e8       	ldi	r24, 0x8F	; 143
+ 7a2:	d8 2e       	mov	r13, r24
+ 7a4:	ce 01       	movw	r24, r28
+ 7a6:	01 96       	adiw	r24, 0x01	; 1
+ 7a8:	5c 01       	movw	r10, r24
+ 7aa:	4c 01       	movw	r8, r24
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:225
+
+  for (uint8_t x = 0; x < 4; x++) {
+    drawSprite(spriteOptionPos [x], 1, optionSprites[x], 16, 2);
+ 7ac:	f6 01       	movw	r30, r12
+ 7ae:	41 91       	ld	r20, Z+
+ 7b0:	51 91       	ld	r21, Z+
+ 7b2:	6f 01       	movw	r12, r30
+ 7b4:	02 e0       	ldi	r16, 0x02	; 2
+ 7b6:	20 e1       	ldi	r18, 0x10	; 16
+ 7b8:	61 e0       	ldi	r22, 0x01	; 1
+ 7ba:	f5 01       	movw	r30, r10
+ 7bc:	81 91       	ld	r24, Z+
+ 7be:	5f 01       	movw	r10, r30
+ 7c0:	2b dd       	rcall	.-1450   	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:224
+  int8_t option = 0;
+  const uint8_t spriteOptionPos [] = {100, 70, 40, 10};
+  bool setOptions = true;
+  oled.clearScreen();
+
+  for (uint8_t x = 0; x < 4; x++) {
+ 7c2:	fd ed       	ldi	r31, 0xDD	; 221
+ 7c4:	cf 16       	cp	r12, r31
+ 7c6:	ff e8       	ldi	r31, 0x8F	; 143
+ 7c8:	df 06       	cpc	r13, r31
+ 7ca:	81 f7       	brne	.-32     	; 0x7ac <main+0x224>
+main():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:228
+    drawSprite(spriteOptionPos [x], 1, optionSprites[x], 16, 2);
+    option++;
+  }
+  option = 0;
+ 7cc:	10 e0       	ldi	r17, 0x00	; 0
+options():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:232
+
+  while (setOptions) {
+
+    if (buttonDebounce(250) || option == 0) {
+ 7ce:	8a ef       	ldi	r24, 0xFA	; 250
+ 7d0:	90 e0       	ldi	r25, 0x00	; 0
+ 7d2:	d8 dc       	rcall	.-1616   	; 0x184 <buttonDebounce(unsigned int)>
+ 7d4:	81 11       	cpse	r24, r1
+ 7d6:	03 c0       	rjmp	.+6      	; 0x7de <main+0x256>
+ 7d8:	2d 81       	ldd	r18, Y+5	; 0x05
+ 7da:	11 11       	cpse	r17, r1
+ 7dc:	17 c0       	rjmp	.+46     	; 0x80c <main+0x284>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:233
+      oled.drawLine(0, 0, 127, 0B00000000);
+ 7de:	20 e0       	ldi	r18, 0x00	; 0
+ 7e0:	4f e7       	ldi	r20, 0x7F	; 127
+ 7e2:	60 e0       	ldi	r22, 0x00	; 0
+ 7e4:	80 e0       	ldi	r24, 0x00	; 0
+ 7e6:	a9 dc       	rcall	.-1710   	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:234
+      drawSprite((spriteOptionPos [option]) + 4, 0, arrow, 8, 1);
+ 7e8:	f4 01       	movw	r30, r8
+ 7ea:	e1 0f       	add	r30, r17
+ 7ec:	f1 1d       	adc	r31, r1
+ 7ee:	17 fd       	sbrc	r17, 7
+ 7f0:	fa 95       	dec	r31
+ 7f2:	80 81       	ld	r24, Z
+ 7f4:	01 e0       	ldi	r16, 0x01	; 1
+ 7f6:	28 e0       	ldi	r18, 0x08	; 8
+ 7f8:	4d ec       	ldi	r20, 0xCD	; 205
+ 7fa:	5f e8       	ldi	r21, 0x8F	; 143
+ 7fc:	60 e0       	ldi	r22, 0x00	; 0
+ 7fe:	8c 5f       	subi	r24, 0xFC	; 252
+ 800:	0b dd       	rcall	.-1514   	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:235
+      if (option++, option > 4) setOptions = false;
+ 802:	1f 5f       	subi	r17, 0xFF	; 255
+ 804:	21 e0       	ldi	r18, 0x01	; 1
+ 806:	15 30       	cpi	r17, 0x05	; 5
+ 808:	0c f0       	brlt	.+2      	; 0x80c <main+0x284>
+ 80a:	20 e0       	ldi	r18, 0x00	; 0
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:238
+    }
+
+    if ((interruptTimer - timer) > 2000) {
+ 80c:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 810:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 814:	40 91 10 3f 	lds	r20, 0x3F10	; 0x803f10 <timer>
+ 818:	50 91 11 3f 	lds	r21, 0x3F11	; 0x803f11 <timer+0x1>
+ 81c:	84 1b       	sub	r24, r20
+ 81e:	95 0b       	sbc	r25, r21
+ 820:	81 3d       	cpi	r24, 0xD1	; 209
+ 822:	97 40       	sbci	r25, 0x07	; 7
+ 824:	08 f4       	brcc	.+2      	; 0x828 <main+0x2a0>
+ 826:	46 c0       	rjmp	.+140    	; 0x8b4 <main+0x32c>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:239
+      timer = interruptTimer;
+ 828:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 82c:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 830:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ 834:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:240
+      switch (option) { // option select menu.
+ 838:	12 30       	cpi	r17, 0x02	; 2
+ 83a:	09 f4       	brne	.+2      	; 0x83e <main+0x2b6>
+ 83c:	ce c0       	rjmp	.+412    	; 0x9da <main+0x452>
+ 83e:	0c f0       	brlt	.+2      	; 0x842 <main+0x2ba>
+ 840:	af c0       	rjmp	.+350    	; 0x9a0 <main+0x418>
+ 842:	11 30       	cpi	r17, 0x01	; 1
+ 844:	c9 f5       	brne	.+114    	; 0x8b8 <main+0x330>
+ledON():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:137
+  return actualVoltage;
+}
+
+void ledON (bool optionSelected) { // leds on or off
+
+  while ((interruptTimer - timer) < 2000) {
+ 846:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 84a:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 84e:	20 91 10 3f 	lds	r18, 0x3F10	; 0x803f10 <timer>
+ 852:	30 91 11 3f 	lds	r19, 0x3F11	; 0x803f11 <timer+0x1>
+ 856:	82 1b       	sub	r24, r18
+ 858:	93 0b       	sbc	r25, r19
+ 85a:	80 3d       	cpi	r24, 0xD0	; 208
+ 85c:	97 40       	sbci	r25, 0x07	; 7
+ 85e:	60 f5       	brcc	.+88     	; 0x8b8 <main+0x330>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:139
+
+    if (buttonDebounce(250) || optionSelected) {
+ 860:	8a ef       	ldi	r24, 0xFA	; 250
+ 862:	90 e0       	ldi	r25, 0x00	; 0
+ 864:	8f dc       	rcall	.-1762   	; 0x184 <buttonDebounce(unsigned int)>
+ 866:	81 11       	cpse	r24, r1
+ 868:	03 c0       	rjmp	.+6      	; 0x870 <main+0x2e8>
+ 86a:	fd 81       	ldd	r31, Y+5	; 0x05
+ 86c:	ff 23       	and	r31, r31
+ 86e:	01 f1       	breq	.+64     	; 0x8b0 <main+0x328>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:140
+      timer = interruptTimer;
+ 870:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 874:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 878:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ 87c:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:142
+      optionSelected = false;
+      if (ledColor++, ledColor > 3) ledColor = 0;
+ 880:	80 91 05 3f 	lds	r24, 0x3F05	; 0x803f05 <ledColor>
+ 884:	8f 5f       	subi	r24, 0xFF	; 255
+ 886:	80 93 05 3f 	sts	0x3F05, r24	; 0x803f05 <ledColor>
+ 88a:	80 91 05 3f 	lds	r24, 0x3F05	; 0x803f05 <ledColor>
+ 88e:	84 30       	cpi	r24, 0x04	; 4
+ 890:	10 f0       	brcs	.+4      	; 0x896 <main+0x30e>
+ 892:	10 92 05 3f 	sts	0x3F05, r1	; 0x803f05 <ledColor>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:144
+
+      switch (ledColor) { // option select menu.
+ 896:	80 91 05 3f 	lds	r24, 0x3F05	; 0x803f05 <ledColor>
+ 89a:	81 30       	cpi	r24, 0x01	; 1
+ 89c:	09 f4       	brne	.+2      	; 0x8a0 <main+0x318>
+ 89e:	8f c0       	rjmp	.+286    	; 0x9be <main+0x436>
+ 8a0:	08 f4       	brcc	.+2      	; 0x8a4 <main+0x31c>
+ 8a2:	8a c0       	rjmp	.+276    	; 0x9b8 <main+0x430>
+ 8a4:	82 30       	cpi	r24, 0x02	; 2
+ 8a6:	09 f4       	brne	.+2      	; 0x8aa <main+0x322>
+ 8a8:	8e c0       	rjmp	.+284    	; 0x9c6 <main+0x43e>
+ 8aa:	83 30       	cpi	r24, 0x03	; 3
+ 8ac:	09 f4       	brne	.+2      	; 0x8b0 <main+0x328>
+ 8ae:	91 c0       	rjmp	.+290    	; 0x9d2 <main+0x44a>
+options():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:232
+  }
+  option = 0;
+
+  while (setOptions) {
+
+    if (buttonDebounce(250) || option == 0) {
+ 8b0:	1d 82       	std	Y+5, r1	; 0x05
+ 8b2:	c9 cf       	rjmp	.-110    	; 0x846 <main+0x2be>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:230
+    drawSprite(spriteOptionPos [x], 1, optionSprites[x], 16, 2);
+    option++;
+  }
+  option = 0;
+
+  while (setOptions) {
+ 8b4:	21 11       	cpse	r18, r1
+ 8b6:	8b cf       	rjmp	.-234    	; 0x7ce <main+0x246>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:257
+          break;
+      }
+      setOptions = false;
+    }
+  }
+  resumeOperation = true;
+ 8b8:	e0 92 02 3f 	sts	0x3F02, r14	; 0x803f02 <resumeOperation>
+loop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:98
+      oled.brightScreen();
+      screenDimmed = false;
+    }
+  }
+
+  if ((interruptTimer - timer) > 4000) { // prepare to sleep or dimm screen
+ 8bc:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 8c0:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 8c4:	20 91 10 3f 	lds	r18, 0x3F10	; 0x803f10 <timer>
+ 8c8:	30 91 11 3f 	lds	r19, 0x3F11	; 0x803f11 <timer+0x1>
+ 8cc:	82 1b       	sub	r24, r18
+ 8ce:	93 0b       	sbc	r25, r19
+ 8d0:	81 3a       	cpi	r24, 0xA1	; 161
+ 8d2:	9f 40       	sbci	r25, 0x0F	; 15
+ 8d4:	08 f4       	brcc	.+2      	; 0x8d8 <main+0x350>
+ 8d6:	c4 ce       	rjmp	.-632    	; 0x660 <main+0xd8>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:99
+    timer = interruptTimer;
+ 8d8:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ 8dc:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ 8e0:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ 8e4:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+dimScreen():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:126
+  }
+  ssd1306_send_data_stop();
+}
+
+void SSD1306Device::dimScreen(void) {
+  oled.ssd1306_send_command(0x81);// brightness controll
+ 8e8:	81 e8       	ldi	r24, 0x81	; 129
+ 8ea:	45 dc       	rcall	.-1910   	; 0x176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:127
+  oled.ssd1306_send_command(0x05);// dim screen
+ 8ec:	85 e0       	ldi	r24, 0x05	; 5
+ 8ee:	43 dc       	rcall	.-1914   	; 0x176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>
+loop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:101
+    oled.dimScreen();
+    screenDimmed = true;
+ 8f0:	e0 92 14 3f 	sts	0x3F14, r14	; 0x803f14 <screenDimmed>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:103
+
+    if (totalSeconds == 0) { // only if the screen is on and the counter is off continue
+ 8f4:	80 91 0e 3f 	lds	r24, 0x3F0E	; 0x803f0e <totalSeconds>
+ 8f8:	90 91 0f 3f 	lds	r25, 0x3F0F	; 0x803f0f <totalSeconds+0x1>
+ 8fc:	89 2b       	or	r24, r25
+ 8fe:	09 f0       	breq	.+2      	; 0x902 <main+0x37a>
+ 900:	af ce       	rjmp	.-674    	; 0x660 <main+0xd8>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:104
+      oled.clearScreen();
+ 902:	2d dc       	rcall	.-1958   	; 0x15e <SSD1306Device::clearScreen() [clone .constprop.10]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:106
+
+      if (BATTCHR)  drawSprite(0, 3, chargingSprite, 8, 1);
+ 904:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 908:	84 fd       	sbrc	r24, 4
+ 90a:	07 c0       	rjmp	.+14     	; 0x91a <main+0x392>
+ 90c:	01 e0       	ldi	r16, 0x01	; 1
+ 90e:	28 e0       	ldi	r18, 0x08	; 8
+ 910:	4d ed       	ldi	r20, 0xDD	; 221
+ 912:	5f e8       	ldi	r21, 0x8F	; 143
+ 914:	63 e0       	ldi	r22, 0x03	; 3
+ 916:	80 e0       	ldi	r24, 0x00	; 0
+ 918:	7f dc       	rcall	.-1794   	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:108
+
+      if (!BATTCHR && powerSaveMode < 240) drawAlwaysOnDisplay();// disable always on display if 4hs passed without pressing the button
+ 91a:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 91e:	84 ff       	sbrs	r24, 4
+ 920:	23 c0       	rjmp	.+70     	; 0x968 <main+0x3e0>
+ 922:	80 91 0d 3f 	lds	r24, 0x3F0D	; 0x803f0d <powerSaveMode>
+ 926:	80 3f       	cpi	r24, 0xF0	; 240
+ 928:	f8 f4       	brcc	.+62     	; 0x968 <main+0x3e0>
+drawAlwaysOnDisplay():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:207
+  timer = interruptTimer;
+}
+
+void drawAlwaysOnDisplay(void) {
+
+  if (readSupplyVoltage() < (MINVOLTAGE + LOWBATT)) enableAlwaysOn = false; // if voltage is below minvoltage + 200mha it disables allways on display.
+ 92a:	29 dd       	rcall	.-1454   	; 0x37e <readSupplyVoltage()>
+ 92c:	84 34       	cpi	r24, 0x44	; 68
+ 92e:	9c 40       	sbci	r25, 0x0C	; 12
+ 930:	10 f4       	brcc	.+4      	; 0x936 <main+0x3ae>
+ 932:	10 92 0c 3f 	sts	0x3F0C, r1	; 0x803f0c <enableAlwaysOn>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:209
+
+  if (enableAlwaysOn) {
+ 936:	80 91 0c 3f 	lds	r24, 0x3F0C	; 0x803f0c <enableAlwaysOn>
+ 93a:	88 23       	and	r24, r24
+ 93c:	a9 f0       	breq	.+42     	; 0x968 <main+0x3e0>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:211
+
+    if (powerSaveMode < 240 && alwaysOn) powerSaveMode++;// after 4 hours if always on display is enable it disables it to save battery
+ 93e:	80 91 0d 3f 	lds	r24, 0x3F0D	; 0x803f0d <powerSaveMode>
+ 942:	80 3f       	cpi	r24, 0xF0	; 240
+ 944:	38 f4       	brcc	.+14     	; 0x954 <main+0x3cc>
+ 946:	90 91 0b 3f 	lds	r25, 0x3F0B	; 0x803f0b <alwaysOn>
+ 94a:	99 23       	and	r25, r25
+ 94c:	19 f0       	breq	.+6      	; 0x954 <main+0x3cc>
+ 94e:	8f 5f       	subi	r24, 0xFF	; 255
+ 950:	80 93 0d 3f 	sts	0x3F0D, r24	; 0x803f0d <powerSaveMode>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:213
+
+    if (!alwaysOn) alwaysOn = true;
+ 954:	80 91 0b 3f 	lds	r24, 0x3F0B	; 0x803f0b <alwaysOn>
+ 958:	81 11       	cpse	r24, r1
+ 95a:	03 c0       	rjmp	.+6      	; 0x962 <main+0x3da>
+ 95c:	81 e0       	ldi	r24, 0x01	; 1
+ 95e:	80 93 0b 3f 	sts	0x3F0B, r24	; 0x803f0b <alwaysOn>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:214
+    displayTime(76, 8);
+ 962:	68 e0       	ldi	r22, 0x08	; 8
+ 964:	8c e4       	ldi	r24, 0x4C	; 76
+ 966:	e9 dc       	rcall	.-1582   	; 0x33a <displayTime(unsigned char, unsigned char)>
+goToSleep():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:390
+  }
+  return true;
+}
+
+void goToSleep (void) {
+  if (!BATTCHR && (!enableAlwaysOn || powerSaveMode >= 240)) oled.ssd1306_send_command(0xAE);
+ 968:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 96c:	84 ff       	sbrs	r24, 4
+ 96e:	0a c0       	rjmp	.+20     	; 0x984 <main+0x3fc>
+ 970:	80 91 0c 3f 	lds	r24, 0x3F0C	; 0x803f0c <enableAlwaysOn>
+ 974:	88 23       	and	r24, r24
+ 976:	21 f0       	breq	.+8      	; 0x980 <main+0x3f8>
+ 978:	80 91 0d 3f 	lds	r24, 0x3F0D	; 0x803f0d <powerSaveMode>
+ 97c:	80 3f       	cpi	r24, 0xF0	; 240
+ 97e:	10 f0       	brcs	.+4      	; 0x984 <main+0x3fc>
+ 980:	8e ea       	ldi	r24, 0xAE	; 174
+ 982:	f9 db       	rcall	.-2062   	; 0x176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:391
+  shouldWakeUp = false;
+ 984:	10 92 01 3f 	sts	0x3F01, r1	; 0x803f01 <shouldWakeUp>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:392
+  PORTA.PIN5CTRL  |= PORT_ISC_BOTHEDGES_gc; //attach interrupt to portA pin 5 keeps pull up enabled
+ 988:	80 91 15 04 	lds	r24, 0x0415	; 0x800415 <numbers+0x7f7430>
+ 98c:	81 60       	ori	r24, 0x01	; 1
+ 98e:	80 93 15 04 	sts	0x0415, r24	; 0x800415 <numbers+0x7f7430>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:394
+  // PORTA.PIN4CTRL  |= PORT_ISC_BOTHEDGES_gc;
+  sleep_enable();
+ 992:	80 91 50 00 	lds	r24, 0x0050	; 0x800050 <numbers+0x7f706b>
+ 996:	81 60       	ori	r24, 0x01	; 1
+ 998:	80 93 50 00 	sts	0x0050, r24	; 0x800050 <numbers+0x7f706b>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:395
+  sleep_cpu();// go to sleep
+ 99c:	88 95       	sleep
+ 99e:	5c ce       	rjmp	.-840    	; 0x658 <main+0xd0>
+options():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:240
+      if (option++, option > 4) setOptions = false;
+    }
+
+    if ((interruptTimer - timer) > 2000) {
+      timer = interruptTimer;
+      switch (option) { // option select menu.
+ 9a0:	13 30       	cpi	r17, 0x03	; 3
+ 9a2:	09 f4       	brne	.+2      	; 0x9a6 <main+0x41e>
+ 9a4:	65 c0       	rjmp	.+202    	; 0xa70 <main+0x4e8>
+ 9a6:	14 30       	cpi	r17, 0x04	; 4
+ 9a8:	09 f0       	breq	.+2      	; 0x9ac <main+0x424>
+ 9aa:	86 cf       	rjmp	.-244    	; 0x8b8 <main+0x330>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:251
+          break;
+        case 3:// set time
+          setTime();
+          break;
+        case 4:
+          enableAlwaysOn = !enableAlwaysOn;
+ 9ac:	80 91 0c 3f 	lds	r24, 0x3F0C	; 0x803f0c <enableAlwaysOn>
+ 9b0:	8f 25       	eor	r24, r15
+ 9b2:	80 93 0c 3f 	sts	0x3F0C, r24	; 0x803f0c <enableAlwaysOn>
+ 9b6:	80 cf       	rjmp	.-256    	; 0x8b8 <main+0x330>
+ledON():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:146
+      optionSelected = false;
+      if (ledColor++, ledColor > 3) ledColor = 0;
+
+      switch (ledColor) { // option select menu.
+        case 0:
+          PORTA.DIR = 0b00000000;
+ 9b8:	10 92 00 04 	sts	0x0400, r1	; 0x800400 <numbers+0x7f741b>
+ 9bc:	79 cf       	rjmp	.-270    	; 0x8b0 <main+0x328>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:149
+          break;
+        case 1:
+          PORTA.DIR = (1 << 3);// pin3 (REDLED) as output
+ 9be:	28 e0       	ldi	r18, 0x08	; 8
+ 9c0:	20 93 00 04 	sts	0x0400, r18	; 0x800400 <numbers+0x7f741b>
+ 9c4:	75 cf       	rjmp	.-278    	; 0x8b0 <main+0x328>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:152
+          break;
+        case 2:
+          PORTA.DIR |= (1 << 2);// pin2 (GREEN) as output
+ 9c6:	80 91 00 04 	lds	r24, 0x0400	; 0x800400 <numbers+0x7f741b>
+ 9ca:	84 60       	ori	r24, 0x04	; 4
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:155
+          break;
+        case 3:
+          PORTA.DIR |= (1 << 1);// pin1 (BLUELED) as output
+ 9cc:	80 93 00 04 	sts	0x0400, r24	; 0x800400 <numbers+0x7f741b>
+ 9d0:	6f cf       	rjmp	.-290    	; 0x8b0 <main+0x328>
+ 9d2:	80 91 00 04 	lds	r24, 0x0400	; 0x800400 <numbers+0x7f741b>
+ 9d6:	82 60       	ori	r24, 0x02	; 2
+ 9d8:	f9 cf       	rjmp	.-14     	; 0x9cc <main+0x444>
+setTimer():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:261
+  }
+  resumeOperation = true;
+}
+
+void setTimer(void) {
+  oled.clearScreen();
+ 9da:	c1 db       	rcall	.-2174   	; 0x15e <SSD1306Device::clearScreen() [clone .constprop.10]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:262
+  drawTime(0, 1, 32, 0);
+ 9dc:	40 e0       	ldi	r20, 0x00	; 0
+ 9de:	60 e2       	ldi	r22, 0x20	; 32
+ 9e0:	80 e0       	ldi	r24, 0x00	; 0
+ 9e2:	5a dc       	rcall	.-1868   	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:263
+  totalSeconds = 0;
+ 9e4:	10 92 0e 3f 	sts	0x3F0E, r1	; 0x803f0e <totalSeconds>
+ 9e8:	10 92 0f 3f 	sts	0x3F0F, r1	; 0x803f0f <totalSeconds+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:268
+  bool setCurrentTimer = true;
+
+  while (setCurrentTimer) {
+
+    if (BUTTONLOW) {
+ 9ec:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ 9f0:	85 fd       	sbrc	r24, 5
+ 9f2:	23 c0       	rjmp	.+70     	; 0xa3a <main+0x4b2>
+ 9f4:	80 91 0e 3f 	lds	r24, 0x3F0E	; 0x803f0e <totalSeconds>
+ 9f8:	90 91 0f 3f 	lds	r25, 0x3F0F	; 0x803f0f <totalSeconds+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:269
+      timer = interruptTimer;
+ 9fc:	20 91 12 3f 	lds	r18, 0x3F12	; 0x803f12 <interruptTimer>
+ a00:	30 91 13 3f 	lds	r19, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ a04:	20 93 10 3f 	sts	0x3F10, r18	; 0x803f10 <timer>
+ a08:	30 93 11 3f 	sts	0x3F11, r19	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:271
+
+      if (totalSeconds += 300, totalSeconds > 1800) totalSeconds = 0;
+ a0c:	84 5d       	subi	r24, 0xD4	; 212
+ a0e:	9e 4f       	sbci	r25, 0xFE	; 254
+ a10:	89 30       	cpi	r24, 0x09	; 9
+ a12:	37 e0       	ldi	r19, 0x07	; 7
+ a14:	93 07       	cpc	r25, r19
+ a16:	38 f5       	brcc	.+78     	; 0xa66 <main+0x4de>
+ a18:	80 93 0e 3f 	sts	0x3F0E, r24	; 0x803f0e <totalSeconds>
+ a1c:	90 93 0f 3f 	sts	0x3F0F, r25	; 0x803f0f <totalSeconds+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:272
+      drawTime(0, 1, 32, (totalSeconds / 60));
+ a20:	80 91 0e 3f 	lds	r24, 0x3F0E	; 0x803f0e <totalSeconds>
+ a24:	90 91 0f 3f 	lds	r25, 0x3F0F	; 0x803f0f <totalSeconds+0x1>
+ a28:	b1 01       	movw	r22, r2
+ a2a:	c7 d0       	rcall	.+398    	; 0xbba <__udivmodhi4>
+ a2c:	46 2f       	mov	r20, r22
+ a2e:	60 e2       	ldi	r22, 0x20	; 32
+ a30:	80 e0       	ldi	r24, 0x00	; 0
+ a32:	32 dc       	rcall	.-1948   	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:273
+      buttonDebounce(300);
+ a34:	8c e2       	ldi	r24, 0x2C	; 44
+ a36:	91 e0       	ldi	r25, 0x01	; 1
+ a38:	a5 db       	rcall	.-2230   	; 0x184 <buttonDebounce(unsigned int)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:276
+    }
+
+    if ((interruptTimer - timer) > 2000) {
+ a3a:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ a3e:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ a42:	20 91 10 3f 	lds	r18, 0x3F10	; 0x803f10 <timer>
+ a46:	30 91 11 3f 	lds	r19, 0x3F11	; 0x803f11 <timer+0x1>
+ a4a:	82 1b       	sub	r24, r18
+ a4c:	93 0b       	sbc	r25, r19
+ a4e:	81 3d       	cpi	r24, 0xD1	; 209
+ a50:	97 40       	sbci	r25, 0x07	; 7
+ a52:	60 f2       	brcs	.-104    	; 0x9ec <main+0x464>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:280
+      setCurrentTimer = false;
+    }
+  }
+  totalSecondsTimer = totalSeconds;
+ a54:	80 91 0e 3f 	lds	r24, 0x3F0E	; 0x803f0e <totalSeconds>
+ a58:	90 91 0f 3f 	lds	r25, 0x3F0F	; 0x803f0f <totalSeconds+0x1>
+ a5c:	80 93 06 3f 	sts	0x3F06, r24	; 0x803f06 <totalSecondsTimer>
+ a60:	90 93 07 3f 	sts	0x3F07, r25	; 0x803f07 <totalSecondsTimer+0x1>
+ a64:	29 cf       	rjmp	.-430    	; 0x8b8 <main+0x330>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:271
+  while (setCurrentTimer) {
+
+    if (BUTTONLOW) {
+      timer = interruptTimer;
+
+      if (totalSeconds += 300, totalSeconds > 1800) totalSeconds = 0;
+ a66:	10 92 0e 3f 	sts	0x3F0E, r1	; 0x803f0e <totalSeconds>
+ a6a:	10 92 0f 3f 	sts	0x3F0F, r1	; 0x803f0f <totalSeconds+0x1>
+ a6e:	d8 cf       	rjmp	.-80     	; 0xa20 <main+0x498>
+setTime():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:284
+  }
+  totalSecondsTimer = totalSeconds;
+}
+
+void setTime(void) {
+  oled.clearScreen();
+ a70:	76 db       	rcall	.-2324   	; 0x15e <SSD1306Device::clearScreen() [clone .constprop.10]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:285
+  alwaysOn = true;
+ a72:	e0 92 0b 3f 	sts	0x3F0B, r14	; 0x803f0b <alwaysOn>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:287
+  uint8_t arrowPos = 104;
+  drawSprite(arrowPos, 0, arrow, 8, 1); // sleep
+ a76:	01 e0       	ldi	r16, 0x01	; 1
+ a78:	28 e0       	ldi	r18, 0x08	; 8
+ a7a:	4d ec       	ldi	r20, 0xCD	; 205
+ a7c:	5f e8       	ldi	r21, 0x8F	; 143
+ a7e:	60 e0       	ldi	r22, 0x00	; 0
+ a80:	88 e6       	ldi	r24, 0x68	; 104
+ a82:	ca db       	rcall	.-2156   	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+main():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:286
+}
+
+void setTime(void) {
+  oled.clearScreen();
+  alwaysOn = true;
+  uint8_t arrowPos = 104;
+ a84:	18 e6       	ldi	r17, 0x68	; 104
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:289
+  drawSprite(arrowPos, 0, arrow, 8, 1); // sleep
+
+  for (uint8_t x = 0; x < 3 ; x++) {
+ a86:	d1 2c       	mov	r13, r1
+setTime():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:291
+    bool setCurrentTime = true;
+    drawTime(90, 1, 18, hours);
+ a88:	40 91 0a 3f 	lds	r20, 0x3F0A	; 0x803f0a <hours>
+ a8c:	62 e1       	ldi	r22, 0x12	; 18
+ a8e:	8a e5       	ldi	r24, 0x5A	; 90
+ a90:	03 dc       	rcall	.-2042   	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:292
+    drawTime(46, 1, 18, minutes);
+ a92:	40 91 09 3f 	lds	r20, 0x3F09	; 0x803f09 <minutes>
+ a96:	62 e1       	ldi	r22, 0x12	; 18
+ a98:	8e e2       	ldi	r24, 0x2E	; 46
+ a9a:	fe db       	rcall	.-2052   	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:293
+    drawTime(0, 1, 18, seconds);
+ a9c:	40 91 08 3f 	lds	r20, 0x3F08	; 0x803f08 <seconds>
+ aa0:	62 e1       	ldi	r22, 0x12	; 18
+ aa2:	80 e0       	ldi	r24, 0x00	; 0
+ aa4:	f9 db       	rcall	.-2062   	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:297
+
+    while (setCurrentTime) {
+
+      if ((interruptTimer - timer) > 250 && BUTTONLOW) {
+ aa6:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ aaa:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ aae:	20 91 10 3f 	lds	r18, 0x3F10	; 0x803f10 <timer>
+ ab2:	30 91 11 3f 	lds	r19, 0x3F11	; 0x803f11 <timer+0x1>
+ ab6:	82 1b       	sub	r24, r18
+ ab8:	93 0b       	sbc	r25, r19
+ aba:	8b 3f       	cpi	r24, 0xFB	; 251
+ abc:	91 05       	cpc	r25, r1
+ abe:	f8 f0       	brcs	.+62     	; 0xafe <main+0x576>
+ ac0:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <numbers+0x7f7423>
+ ac4:	85 fd       	sbrc	r24, 5
+ ac6:	1b c0       	rjmp	.+54     	; 0xafe <main+0x576>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:298
+        timer = interruptTimer;
+ ac8:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ acc:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ ad0:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ ad4:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:300
+
+        switch (x) {
+ ad8:	f1 e0       	ldi	r31, 0x01	; 1
+ ada:	df 16       	cp	r13, r31
+ adc:	e1 f1       	breq	.+120    	; 0xb56 <main+0x5ce>
+ ade:	22 e0       	ldi	r18, 0x02	; 2
+ ae0:	d2 16       	cp	r13, r18
+ ae2:	09 f4       	brne	.+2      	; 0xae6 <main+0x55e>
+ ae4:	47 c0       	rjmp	.+142    	; 0xb74 <main+0x5ec>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:303
+          case 0:
+
+            if (hours++, hours > 23) hours = 0;
+ ae6:	80 91 0a 3f 	lds	r24, 0x3F0A	; 0x803f0a <hours>
+ aea:	8f 5f       	subi	r24, 0xFF	; 255
+ aec:	88 31       	cpi	r24, 0x18	; 24
+ aee:	80 f5       	brcc	.+96     	; 0xb50 <main+0x5c8>
+ af0:	80 93 0a 3f 	sts	0x3F0A, r24	; 0x803f0a <hours>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:304
+            drawTime(90, 1, 18, hours);
+ af4:	40 91 0a 3f 	lds	r20, 0x3F0A	; 0x803f0a <hours>
+ af8:	62 e1       	ldi	r22, 0x12	; 18
+ afa:	8a e5       	ldi	r24, 0x5A	; 90
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:315
+            break;
+
+          case 2:
+
+            if (seconds++, seconds > 59) seconds = 0;
+            drawTime(0, 1, 18, seconds);
+ afc:	cd db       	rcall	.-2150   	; 0x298 <drawTime(unsigned char, unsigned char, unsigned char, signed char) [clone .constprop.11]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:320
+            break;
+        }
+      }
+
+      if ((interruptTimer - timer) > 2500) {
+ afe:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ b02:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ b06:	20 91 10 3f 	lds	r18, 0x3F10	; 0x803f10 <timer>
+ b0a:	30 91 11 3f 	lds	r19, 0x3F11	; 0x803f11 <timer+0x1>
+ b0e:	82 1b       	sub	r24, r18
+ b10:	93 0b       	sbc	r25, r19
+ b12:	85 3c       	cpi	r24, 0xC5	; 197
+ b14:	99 40       	sbci	r25, 0x09	; 9
+ b16:	38 f2       	brcs	.-114    	; 0xaa6 <main+0x51e>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:321
+        timer = interruptTimer;
+ b18:	80 91 12 3f 	lds	r24, 0x3F12	; 0x803f12 <interruptTimer>
+ b1c:	90 91 13 3f 	lds	r25, 0x3F13	; 0x803f13 <interruptTimer+0x1>
+ b20:	80 93 10 3f 	sts	0x3F10, r24	; 0x803f10 <timer>
+ b24:	90 93 11 3f 	sts	0x3F11, r25	; 0x803f11 <timer+0x1>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:322
+        oled.drawLine(0, 0, 127, 0b00000000);
+ b28:	20 e0       	ldi	r18, 0x00	; 0
+ b2a:	4f e7       	ldi	r20, 0x7F	; 127
+ b2c:	60 e0       	ldi	r22, 0x00	; 0
+ b2e:	80 e0       	ldi	r24, 0x00	; 0
+ b30:	04 db       	rcall	.-2552   	; 0x13a <SSD1306Device::drawLine(unsigned char, unsigned char, unsigned char, unsigned char) [clone .constprop.12]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:323
+        arrowPos -= 44;
+ b32:	1c 52       	subi	r17, 0x2C	; 44
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:324
+        drawSprite(arrowPos, 0, arrow, 8, 1);
+ b34:	01 e0       	ldi	r16, 0x01	; 1
+ b36:	28 e0       	ldi	r18, 0x08	; 8
+ b38:	4d ec       	ldi	r20, 0xCD	; 205
+ b3a:	5f e8       	ldi	r21, 0x8F	; 143
+ b3c:	60 e0       	ldi	r22, 0x00	; 0
+ b3e:	81 2f       	mov	r24, r17
+ b40:	6b db       	rcall	.-2346   	; 0x218 <drawSprite(unsigned char, unsigned char, unsigned char*, unsigned char, unsigned char)>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:289
+  oled.clearScreen();
+  alwaysOn = true;
+  uint8_t arrowPos = 104;
+  drawSprite(arrowPos, 0, arrow, 8, 1); // sleep
+
+  for (uint8_t x = 0; x < 3 ; x++) {
+ b42:	d3 94       	inc	r13
+ b44:	14 3e       	cpi	r17, 0xE4	; 228
+ b46:	09 f0       	breq	.+2      	; 0xb4a <main+0x5c2>
+ b48:	9f cf       	rjmp	.-194    	; 0xa88 <main+0x500>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:329
+        drawSprite(arrowPos, 0, arrow, 8, 1);
+        setCurrentTime = false;
+      }
+    }
+  }
+  alwaysOn = false;
+ b4a:	10 92 0b 3f 	sts	0x3F0B, r1	; 0x803f0b <alwaysOn>
+ b4e:	b4 ce       	rjmp	.-664    	; 0x8b8 <main+0x330>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:303
+        timer = interruptTimer;
+
+        switch (x) {
+          case 0:
+
+            if (hours++, hours > 23) hours = 0;
+ b50:	10 92 0a 3f 	sts	0x3F0A, r1	; 0x803f0a <hours>
+ b54:	cf cf       	rjmp	.-98     	; 0xaf4 <main+0x56c>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:308
+            drawTime(90, 1, 18, hours);
+            break;
+          case 1:
+
+            if (minutes++, minutes > 59) minutes = 0;
+ b56:	80 91 09 3f 	lds	r24, 0x3F09	; 0x803f09 <minutes>
+ b5a:	8f 5f       	subi	r24, 0xFF	; 255
+ b5c:	8c 33       	cpi	r24, 0x3C	; 60
+ b5e:	38 f4       	brcc	.+14     	; 0xb6e <main+0x5e6>
+ b60:	80 93 09 3f 	sts	0x3F09, r24	; 0x803f09 <minutes>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:309
+            drawTime(46, 1, 18, minutes);
+ b64:	40 91 09 3f 	lds	r20, 0x3F09	; 0x803f09 <minutes>
+ b68:	62 e1       	ldi	r22, 0x12	; 18
+ b6a:	8e e2       	ldi	r24, 0x2E	; 46
+ b6c:	c7 cf       	rjmp	.-114    	; 0xafc <main+0x574>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:308
+            if (hours++, hours > 23) hours = 0;
+            drawTime(90, 1, 18, hours);
+            break;
+          case 1:
+
+            if (minutes++, minutes > 59) minutes = 0;
+ b6e:	10 92 09 3f 	sts	0x3F09, r1	; 0x803f09 <minutes>
+ b72:	f8 cf       	rjmp	.-16     	; 0xb64 <main+0x5dc>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:314
+            drawTime(46, 1, 18, minutes);
+            break;
+
+          case 2:
+
+            if (seconds++, seconds > 59) seconds = 0;
+ b74:	80 91 08 3f 	lds	r24, 0x3F08	; 0x803f08 <seconds>
+ b78:	8f 5f       	subi	r24, 0xFF	; 255
+ b7a:	8c 33       	cpi	r24, 0x3C	; 60
+ b7c:	38 f4       	brcc	.+14     	; 0xb8c <main+0x604>
+ b7e:	80 93 08 3f 	sts	0x3F08, r24	; 0x803f08 <seconds>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:315
+            drawTime(0, 1, 18, seconds);
+ b82:	40 91 08 3f 	lds	r20, 0x3F08	; 0x803f08 <seconds>
+ b86:	62 e1       	ldi	r22, 0x12	; 18
+ b88:	80 e0       	ldi	r24, 0x00	; 0
+ b8a:	b8 cf       	rjmp	.-144    	; 0xafc <main+0x574>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:314
+            drawTime(46, 1, 18, minutes);
+            break;
+
+          case 2:
+
+            if (seconds++, seconds > 59) seconds = 0;
+ b8c:	10 92 08 3f 	sts	0x3F08, r1	; 0x803f08 <seconds>
+ b90:	f8 cf       	rjmp	.-16     	; 0xb82 <main+0x5fa>
+brightScreen():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:131
+}
+
+void SSD1306Device::brightScreen(void) {
+  oled.ssd1306_send_command(0x81);// brightness controll
+ b92:	81 e8       	ldi	r24, 0x81	; 129
+ b94:	f0 da       	rcall	.-2592   	; 0x176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/tinyOLED.cpp:132
+  oled.ssd1306_send_command(0x3F);// dim screen
+ b96:	8f e3       	ldi	r24, 0x3F	; 63
+ b98:	ee da       	rcall	.-2596   	; 0x176 <SSD1306Device::ssd1306_send_command(unsigned char) [clone .constprop.8]>
+loop():
+C:\Users\gross\OneDrive\Arduino\Game_Light\Watch 2\Game_Light_watch_2_2.2/Game_Light_watch_2_2.2.ino:94
+
+    if (!screenDimmed && displayBatt() != 0) {// only enter menu if batt is above 0 
+      options(); // enter options
+    } else {
+      oled.brightScreen();
+      screenDimmed = false;
+ b9a:	10 92 14 3f 	sts	0x3F14, r1	; 0x803f14 <screenDimmed>
+ b9e:	8e ce       	rjmp	.-740    	; 0x8bc <main+0x334>
+
+00000ba0 <__divmodqi4>:
+__divmodqi4():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1366
+ ba0:	87 fb       	bst	r24, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1367
+ ba2:	08 2e       	mov	r0, r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1368
+ ba4:	06 26       	eor	r0, r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1369
+ ba6:	87 fd       	sbrc	r24, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1370
+ ba8:	81 95       	neg	r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1371
+ baa:	67 fd       	sbrc	r22, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1372
+ bac:	61 95       	neg	r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1373
+ bae:	6d d0       	rcall	.+218    	; 0xc8a <__udivmodqi4>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1374
+ bb0:	0e f4       	brtc	.+2      	; 0xbb4 <__divmodqi4_1>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1375
+ bb2:	91 95       	neg	r25
+
+00000bb4 <__divmodqi4_1>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1377
+ bb4:	07 fc       	sbrc	r0, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1378
+ bb6:	81 95       	neg	r24
+
+00000bb8 <__divmodqi4_exit>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1380
+ bb8:	08 95       	ret
+
+00000bba <__udivmodhi4>:
+__udivmodhi4():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1408
+ bba:	aa 1b       	sub	r26, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1409
+ bbc:	bb 1b       	sub	r27, r27
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1410
+ bbe:	51 e1       	ldi	r21, 0x11	; 17
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1411
+ bc0:	07 c0       	rjmp	.+14     	; 0xbd0 <__udivmodhi4_ep>
+
+00000bc2 <__udivmodhi4_loop>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1413
+ bc2:	aa 1f       	adc	r26, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1414
+ bc4:	bb 1f       	adc	r27, r27
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1415
+ bc6:	a6 17       	cp	r26, r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1416
+ bc8:	b7 07       	cpc	r27, r23
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1417
+ bca:	10 f0       	brcs	.+4      	; 0xbd0 <__udivmodhi4_ep>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1418
+ bcc:	a6 1b       	sub	r26, r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1419
+ bce:	b7 0b       	sbc	r27, r23
+
+00000bd0 <__udivmodhi4_ep>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1421
+ bd0:	88 1f       	adc	r24, r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1422
+ bd2:	99 1f       	adc	r25, r25
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1423
+ bd4:	5a 95       	dec	r21
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1424
+ bd6:	a9 f7       	brne	.-22     	; 0xbc2 <__udivmodhi4_loop>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1425
+ bd8:	80 95       	com	r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1426
+ bda:	90 95       	com	r25
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1428
+ bdc:	bc 01       	movw	r22, r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1430
+ bde:	cd 01       	movw	r24, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1432
+ be0:	08 95       	ret
+
+00000be2 <__udivmodsi4>:
+__udivmodsi4():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1638
+ be2:	a1 e2       	ldi	r26, 0x21	; 33
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1639
+ be4:	1a 2e       	mov	r1, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1640
+ be6:	aa 1b       	sub	r26, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1641
+ be8:	bb 1b       	sub	r27, r27
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1642
+ bea:	fd 01       	movw	r30, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1644
+ bec:	0d c0       	rjmp	.+26     	; 0xc08 <__udivmodsi4_ep>
+
+00000bee <__udivmodsi4_loop>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1646
+ bee:	aa 1f       	adc	r26, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1647
+ bf0:	bb 1f       	adc	r27, r27
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1648
+ bf2:	ee 1f       	adc	r30, r30
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1649
+ bf4:	ff 1f       	adc	r31, r31
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1650
+ bf6:	a2 17       	cp	r26, r18
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1651
+ bf8:	b3 07       	cpc	r27, r19
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1652
+ bfa:	e4 07       	cpc	r30, r20
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1653
+ bfc:	f5 07       	cpc	r31, r21
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1654
+ bfe:	20 f0       	brcs	.+8      	; 0xc08 <__udivmodsi4_ep>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1655
+ c00:	a2 1b       	sub	r26, r18
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1656
+ c02:	b3 0b       	sbc	r27, r19
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1657
+ c04:	e4 0b       	sbc	r30, r20
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1658
+ c06:	f5 0b       	sbc	r31, r21
+
+00000c08 <__udivmodsi4_ep>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1660
+ c08:	66 1f       	adc	r22, r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1661
+ c0a:	77 1f       	adc	r23, r23
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1662
+ c0c:	88 1f       	adc	r24, r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1663
+ c0e:	99 1f       	adc	r25, r25
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1664
+ c10:	1a 94       	dec	r1
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1665
+ c12:	69 f7       	brne	.-38     	; 0xbee <__udivmodsi4_loop>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1667
+ c14:	60 95       	com	r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1668
+ c16:	70 95       	com	r23
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1669
+ c18:	80 95       	com	r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1670
+ c1a:	90 95       	com	r25
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1672
+ c1c:	9b 01       	movw	r18, r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1674
+ c1e:	ac 01       	movw	r20, r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1676
+ c20:	bd 01       	movw	r22, r26
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1678
+ c22:	cf 01       	movw	r24, r30
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1680
+ c24:	08 95       	ret
+
+00000c26 <__divmodsi4>:
+__divmodsi4():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1686
+ c26:	05 2e       	mov	r0, r21
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1687
+ c28:	97 fb       	bst	r25, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1688
+ c2a:	16 f4       	brtc	.+4      	; 0xc30 <__divmodsi4+0xa>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1689
+ c2c:	00 94       	com	r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1690
+ c2e:	0f d0       	rcall	.+30     	; 0xc4e <__negsi2>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1692
+ c30:	57 fd       	sbrc	r21, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1693
+ c32:	05 d0       	rcall	.+10     	; 0xc3e <__divmodsi4_neg2>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1694
+ c34:	d6 df       	rcall	.-84     	; 0xbe2 <__udivmodsi4>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1695
+ c36:	07 fc       	sbrc	r0, 7
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1696
+ c38:	02 d0       	rcall	.+4      	; 0xc3e <__divmodsi4_neg2>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1697
+ c3a:	46 f4       	brtc	.+16     	; 0xc4c <__divmodsi4_exit>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1698
+ c3c:	08 c0       	rjmp	.+16     	; 0xc4e <__negsi2>
+
+00000c3e <__divmodsi4_neg2>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1701
+ c3e:	50 95       	com	r21
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1702
+ c40:	40 95       	com	r20
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1703
+ c42:	30 95       	com	r19
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1704
+ c44:	21 95       	neg	r18
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1705
+ c46:	3f 4f       	sbci	r19, 0xFF	; 255
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1706
+ c48:	4f 4f       	sbci	r20, 0xFF	; 255
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1707
+ c4a:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00000c4c <__divmodsi4_exit>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1709
+ c4c:	08 95       	ret
+
+00000c4e <__negsi2>:
+__negsi2():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1718
+ c4e:	90 95       	com	r25
+ c50:	80 95       	com	r24
+ c52:	70 95       	com	r23
+ c54:	61 95       	neg	r22
+ c56:	7f 4f       	sbci	r23, 0xFF	; 255
+ c58:	8f 4f       	sbci	r24, 0xFF	; 255
+ c5a:	9f 4f       	sbci	r25, 0xFF	; 255
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1719
+ c5c:	08 95       	ret
+
+00000c5e <__umulhisi3>:
+__umulhisi3():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:564
+ c5e:	a2 9f       	mul	r26, r18
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:565
+ c60:	b0 01       	movw	r22, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:566
+ c62:	b3 9f       	mul	r27, r19
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:567
+ c64:	c0 01       	movw	r24, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:568
+ c66:	a3 9f       	mul	r26, r19
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:578
+ c68:	01 d0       	rcall	.+2      	; 0xc6c <__umulhisi3+0xe>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:580
+ c6a:	b2 9f       	mul	r27, r18
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:581
+ c6c:	70 0d       	add	r23, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:582
+ c6e:	81 1d       	adc	r24, r1
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:583
+ c70:	11 24       	eor	r1, r1
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:584
+ c72:	91 1d       	adc	r25, r1
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:585
+ c74:	08 95       	ret
+
+00000c76 <__muluhisi3>:
+__muluhisi3():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:626
+ c76:	f3 df       	rcall	.-26     	; 0xc5e <__umulhisi3>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:627
+ c78:	a5 9f       	mul	r26, r21
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:628
+ c7a:	90 0d       	add	r25, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:629
+ c7c:	b4 9f       	mul	r27, r20
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:630
+ c7e:	90 0d       	add	r25, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:631
+ c80:	a4 9f       	mul	r26, r20
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:632
+ c82:	80 0d       	add	r24, r0
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:633
+ c84:	91 1d       	adc	r25, r1
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:634
+ c86:	11 24       	eor	r1, r1
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:635
+ c88:	08 95       	ret
+
+00000c8a <__udivmodqi4>:
+__udivmodqi4():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1346
+ c8a:	99 1b       	sub	r25, r25
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1347
+ c8c:	79 e0       	ldi	r23, 0x09	; 9
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1348
+ c8e:	04 c0       	rjmp	.+8      	; 0xc98 <__udivmodqi4_ep>
+
+00000c90 <__udivmodqi4_loop>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1350
+ c90:	99 1f       	adc	r25, r25
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1351
+ c92:	96 17       	cp	r25, r22
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1352
+ c94:	08 f0       	brcs	.+2      	; 0xc98 <__udivmodqi4_ep>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1353
+ c96:	96 1b       	sub	r25, r22
+
+00000c98 <__udivmodqi4_ep>:
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1355
+ c98:	88 1f       	adc	r24, r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1356
+ c9a:	7a 95       	dec	r23
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1357
+ c9c:	c9 f7       	brne	.-14     	; 0xc90 <__udivmodqi4_loop>
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1358
+ c9e:	80 95       	com	r24
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1360
+ ca0:	08 95       	ret
+
+00000ca2 <_exit>:
+exit():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ ca2:	f8 94       	cli
+
+00000ca4 <__stop_program>:
+__stop_program():
+/home/admin/Arduino/toolchain-avr-special/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ ca4:	ff cf       	rjmp	.-2      	; 0xca4 <__stop_program>
